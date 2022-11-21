@@ -1,26 +1,45 @@
 {
-  "name": "web",
+  "name": "gdsc-ssu-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@tanstack/react-query": "4.16.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.8",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.2",
-    "next": "13.0.2",
+    "@types/react-dom": "18.0.9",
+    "@vanilla-extract/css": "1.9.2",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
+    "framer-motion": "7.6.7",
+    "jotai": "1.10.0",
+    "next": "13.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   },
   "devDependencies": {
+    "@babel/core": "7.20.2",
+    "@storybook/addon-actions": "6.5.13",
+    "@storybook/addon-essentials": "6.5.13",
+    "@storybook/addon-interactions": "6.5.13",
+    "@storybook/addon-links": "6.5.13",
+    "@storybook/builder-webpack5": "6.5.13",
+    "@storybook/manager-webpack5": "6.5.13",
+    "@storybook/react": "6.5.13",
+    "@storybook/testing-library": "0.0.13",
+    "@svgr/webpack": "6.5.1",
+    "@vanilla-extract/next-plugin": "2.1.1",
+    "babel-loader": "8.3.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-storybook": "0.6.7",
     "prettier": "2.7.1"
   }
 }
