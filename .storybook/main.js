@@ -13,6 +13,7 @@ module.exports = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
+  staticDirs: ['../public'],
   webpackFinal: async (config) => {
     // new `next/link` support
     // https://github.com/storybookjs/storybook/issues/19813#issuecomment-1319692136
