@@ -37,7 +37,9 @@
     "@storybook/testing-library": "0.0.13",
     "@svgr/webpack": "6.5.1",
     "@vanilla-extract/next-plugin": "2.1.1",
+    "@vanilla-extract/webpack-plugin": "2.2.0",
     "babel-loader": "8.3.0",
+    "chromatic": "6.11.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-storybook": "0.6.7",
     "prettier": "2.7.1"

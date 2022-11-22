@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -20,6 +21,36 @@ module.exports = {
         'process.env.__NEXT_NEW_LINK_BEHAVIOR': true,
       }),
     );
+
+    // vanilla-extract support
+    config.plugins.push(new VanillaExtractPlugin());
+
+    // vanilla-extract HMR support
+    // https://github.com/vanilla-extract-css/vanilla-extract/issues/905#issuecomment-1307664487
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: 'async',
+        minSize: 20000,
+        minRemainingSize: 0,
+        minChunks: 1,
+        maxAsyncRequests: 30,
+        maxInitialRequests: 30,
+        enforceSizeThreshold: 50000,
+        cacheGroups: {
+          defaultVendors: {
+            test: `[\\/]node_modules[\\/](?!.*vanilla-extract)`,
+            priority: -10,
+            reuseExistingChunk: true,
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+        },
+      },
+    };
 
     // svgr support
     const fileLoaderRule = config.module.rules.find(

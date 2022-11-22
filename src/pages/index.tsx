@@ -1,3 +1,5 @@
+import { Test } from '@/components/common';
+
 export default function Home() {
-  return <div />;
+  return <Test text={'test'} />;
 }
