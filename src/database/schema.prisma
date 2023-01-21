@@ -1,6 +1,7 @@
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_DEV_URL") // TODO: DEV MODE
+  provider          = "postgresql"
+  url               = env("DATABASE_DEV_URL") // TODO: PROD MODE
+  shadowDatabaseUrl = env("DATABASE_DEV_URL")
 }
 
 generator client {
