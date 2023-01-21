@@ -43,7 +43,9 @@
     "chromatic": "6.11.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-storybook": "0.6.7",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "prettier-plugin-prisma": "4.8.0",
+    "prisma": "4.9.0"
   },
   "readme": "ERROR: No README data found!",
   "_id": "gdsc-ssu-web@0.1.0"
