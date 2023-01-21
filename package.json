@@ -9,7 +9,9 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --exit-zero-on-changes"
+    "chromatic": "npx chromatic --exit-zero-on-changes",
+    "migrate": "npx prisma migrate dev",
+    "db": "npx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "4.9.0",
