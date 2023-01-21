@@ -37,3 +37,6 @@ yarn-error.log*
 next-env.d.ts
 
 build-storybook.log
+
+# migration
+src/database/migrations
