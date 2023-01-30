@@ -1,8 +1,12 @@
-name: 'Chromatic'
-on: push
+name: 'DB Migration'
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'src/database/schema.prisma'
 
 jobs:
-  chromatic-deployment:
+  migrate:
     runs-on: ubuntu-latest
     environment: Preview
     steps:
@@ -17,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      - name: Migrate
+        run: yarn db:prod
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

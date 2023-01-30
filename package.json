@@ -10,8 +10,12 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --exit-zero-on-changes",
-    "migrate": "npx prisma migrate dev",
-    "db": "npx prisma db push"
+    "db:dev": "npx prisma migrate dev",
+    "db:push": "npx prisma db push",
+    "db:up": "docker compose up -d && npx prisma db push",
+    "db:nuke": "docker compose down --volumes --remove-orphans",
+    "db:prod": "npx prisma migrate deploy",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "4.9.0",
