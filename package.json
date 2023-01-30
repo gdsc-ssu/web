@@ -12,7 +12,7 @@
     "chromatic": "npx chromatic --exit-zero-on-changes",
     "db:dev": "npx prisma migrate dev",
     "db:push": "npx prisma db push",
-    "db:up": "docker compose up -d && npx prisma db push",
+    "db:up": "docker compose up -d",
     "db:nuke": "docker compose down --volumes --remove-orphans",
     "db:prod": "npx prisma migrate deploy",
     "postinstall": "npx prisma generate"
