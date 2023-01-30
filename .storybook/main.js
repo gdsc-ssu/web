@@ -73,6 +73,7 @@ module.exports = {
       '@/logics': path.resolve(__dirname, '../src/logics'),
       '@/constants': path.resolve(__dirname, '../src/constants'),
       '@/assets': path.resolve(__dirname, '../src/assets'),
+      '@/lib': path.resolve(__dirname, '../lib'),
     };
 
     return config;

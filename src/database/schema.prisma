@@ -1,9 +1,14 @@
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_DEV_URL") // TODO: PROD MODE
-  shadowDatabaseUrl = env("DATABASE_DEV_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
+}
+
+model test {
+  id    Int    @id @default(autoincrement())
+  test  String
+  test2 String
 }
