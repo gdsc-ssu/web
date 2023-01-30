@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: Preview
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v3
