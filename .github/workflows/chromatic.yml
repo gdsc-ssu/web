@@ -4,10 +4,22 @@ on: push
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-latest
+    environment: Preview
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
       - name: Install dependencies
-        run: yarn
+        run: yarn install --frozen-lockfile
+
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:

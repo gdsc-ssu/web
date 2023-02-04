@@ -1,0 +1,28 @@
+name: 'DB Migration (Production)'
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/database/schema.prisma'
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Migrate
+        run: yarn db:prod
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
