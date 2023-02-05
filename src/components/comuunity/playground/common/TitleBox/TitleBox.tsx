@@ -1,4 +1,4 @@
-import { TEXT_STYLE_TITLE_PC, TEXT_STYLE_TITLE_MOBILE } from '../token';
+import { TEXT_STYLE_TITLE_PC, TEXT_STYLE_TITLE_MOBILE, COLORS } from '../token';
 
 interface Props {
   title: string;
@@ -28,11 +28,17 @@ const TitleBox = (props: Props) => {
         div > span:nth-child(1) {
           font-size: ${TEXT_STYLE_TITLE_PC.title.fontSize}px;
           font-weight: ${TEXT_STYLE_TITLE_PC.title.fontWeight};
+          text-align: center;
+          text-shadow: 0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8};
         }
 
         div > span:nth-child(2) {
           font-size: ${TEXT_STYLE_TITLE_PC.subtitle3.fontSize}px;
           font-weight: ${TEXT_STYLE_TITLE_PC.subtitle3.fontWeight};
+          white-space: pre-line;
+          word-break: keep-all;
+          text-align: center;
+          text-shadow: 0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8};
         }
 
         @media screen and (max-width: 500px) {
