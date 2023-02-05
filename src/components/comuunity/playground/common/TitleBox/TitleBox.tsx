@@ -1,3 +1,5 @@
+import { TEXT_STYLE_TITLE_PC, TEXT_STYLE_TITLE_MOBILE } from '../token';
+
 interface Props {
   title: string;
   subtitle: string;
@@ -24,13 +26,25 @@ const TitleBox = (props: Props) => {
         }
 
         div > span:nth-child(1) {
-          font-size: 30px;
-          font-weight: 800;
+          font-size: ${TEXT_STYLE_TITLE_PC.title.fontSize}px;
+          font-weight: ${TEXT_STYLE_TITLE_PC.title.fontWeight};
         }
 
         div > span:nth-child(2) {
-          font-size: 18px;
-          font-weight: 500;
+          font-size: ${TEXT_STYLE_TITLE_PC.subtitle3.fontSize}px;
+          font-weight: ${TEXT_STYLE_TITLE_PC.subtitle3.fontWeight};
+        }
+
+        @media screen and (max-width: 500px) {
+          div > span:nth-child(1) {
+            font-size: ${TEXT_STYLE_TITLE_MOBILE.title.fontSize}px;
+            font-weight: ${TEXT_STYLE_TITLE_MOBILE.title.fontWeight};
+          }
+
+          div > span:nth-child(2) {
+            font-size: ${TEXT_STYLE_TITLE_MOBILE.subtitle3.fontSize}px;
+            font-weight: ${TEXT_STYLE_TITLE_MOBILE.subtitle3.fontWeight};
+          }
         }
       `}</style>
     </div>

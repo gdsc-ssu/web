@@ -1,3 +1,5 @@
+import { TEXT_STYLE_BUTTON_PC, TEXT_STYLE_BUTTON_MOBILE } from '../token';
+
 interface Props {
   color: string; //글자색
   title: string; //버튼 텍스트
@@ -28,13 +30,20 @@ const StartButton = (props: Props) => {
           justify-content: center;
           box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 50px;
 
-          font-size: 20px;
+          font-size: ${TEXT_STYLE_BUTTON_PC.button1B.fontSize}px;
           font-weight: 800;
           font-family: 'SUIT Variable', sans-serif;
           white-space: pre-line;
           word-break: keep-all;
           text-align: center;
           color: ${props.color};
+        }
+
+        @media screen and (max-width: 500px) {
+          button {
+            font-size: ${TEXT_STYLE_BUTTON_MOBILE.button1B.fontSize}px;
+            font-weight: 800;
+          }
         }
       `}</style>
     </button>

@@ -1,3 +1,5 @@
+import { TEXT_STYLE_BUTTON_PC, TEXT_STYLE_BUTTON_MOBILE } from '../token';
+
 interface Props {
   backgroundColor: string;
   color: string;
@@ -29,13 +31,20 @@ const Button = (props: Props) => {
           justify-content: center;
           box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 50px;
 
-          font-size: 14px;
-          font-weight: 600;
+          font-size: ${TEXT_STYLE_BUTTON_PC.button3.fontSize}px;
+          font-weight: ${TEXT_STYLE_BUTTON_PC.button3.fontWeight};
           font-family: 'SUIT Variable', sans-serif;
           white-space: pre-line;
           word-break: keep-all;
           text-align: center;
           color: ${props.color};
+        }
+
+        @media screen and (max-width: 500px) {
+          button {
+            font-size: ${TEXT_STYLE_BUTTON_MOBILE.button3.fontSize}px;
+            font-weight: ${TEXT_STYLE_BUTTON_MOBILE.button3.fontWeight};
+          }
         }
       `}</style>
     </button>
