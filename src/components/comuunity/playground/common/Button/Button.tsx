@@ -31,8 +31,8 @@ const Button = (props: Props) => {
           justify-content: center;
           box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 50px;
 
-          font-size: ${TEXT_STYLE_BUTTON_PC.button3.fontSize}px;
-          font-weight: ${TEXT_STYLE_BUTTON_PC.button3.fontWeight};
+          font-size: ${TEXT_STYLE_BUTTON_PC.button4B.fontSize}px;
+          font-weight: ${TEXT_STYLE_BUTTON_PC.button4B.fontWeight};
           font-family: 'SUIT Variable', sans-serif;
           white-space: pre-line;
           word-break: keep-all;
@@ -42,8 +42,8 @@ const Button = (props: Props) => {
 
         @media screen and (max-width: 500px) {
           button {
-            font-size: ${TEXT_STYLE_BUTTON_MOBILE.button3.fontSize}px;
-            font-weight: ${TEXT_STYLE_BUTTON_MOBILE.button3.fontWeight};
+            font-size: ${TEXT_STYLE_BUTTON_MOBILE.button4B.fontSize}px;
+            font-weight: ${TEXT_STYLE_BUTTON_MOBILE.button4B.fontWeight};
           }
         }
       `}</style>
