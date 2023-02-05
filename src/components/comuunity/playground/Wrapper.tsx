@@ -17,11 +17,13 @@ const Wrapper = (props: Props) => {
         .container {
           width: 31.2vw;
           min-height: 100vh;
+          height: 100vh;
           background: linear-gradient(
             135deg,
             ${props.topColor},
             ${props.bottomColor}
           );
+          overflow-x: hidden;
         }
 
         @media screen and (min-width: 500px) {
@@ -33,6 +35,7 @@ const Wrapper = (props: Props) => {
         @media screen and (max-width: 500px) {
           .container {
             width: 100vw;
+            height: calc(var(--var, 1vh) * 100);
           }
         }
       `}</style>
