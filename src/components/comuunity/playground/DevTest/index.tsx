@@ -1,5 +1,6 @@
 import Wrapper from '../Wrapper';
 import StartPage from './StartPage';
+import PlayPage from './PlayPage';
 import { useState } from 'react';
 
 /**
@@ -11,7 +12,11 @@ const DevTestPage = () => {
   return (
     <div className="devtest__page">
       <Wrapper topColor="#00A4CA" bottomColor="#58C4C4">
-        {stage === 0 ? <StartPage setStage={setStage} /> : <></>}
+        {stage === 0 ? (
+          <StartPage setStage={setStage} />
+        ) : (
+          <PlayPage setStage={setStage} />
+        )}
       </Wrapper>
       <style jsx>{`
         .devtest__page {

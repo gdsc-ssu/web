@@ -165,6 +165,10 @@ export const TEXT_STYLE_BUTTON_PC = {
     fontSize: 16,
     fontWeight: 400,
   },
+  button4B: {
+    fontSize: 14,
+    fontWeight: 800,
+  },
 };
 
 /**
@@ -190,5 +194,9 @@ export const TEXT_STYLE_BUTTON_MOBILE = {
   button3: {
     fontSize: 14,
     fontWeight: 400,
+  },
+  button4B: {
+    fontSize: 13,
+    fontWeight: 800,
   },
 };
