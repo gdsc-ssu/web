@@ -13,7 +13,7 @@ const Roadmap = () => {
         title={'파트별 로드맵'}
         subTitle={'GDSC SSU에서 제안하는 파트별 최신 로드맵'}
       />
-      <LoadmapMenu temp={'web Frontend'} />
+      <LoadmapMenu />
       <LoadmapArea />
     </>
   );
