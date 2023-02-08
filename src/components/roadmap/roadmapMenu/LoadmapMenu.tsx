@@ -6,7 +6,6 @@ type LoadmapMenuProps = {
   temp: string;
 };
 
-//useState로 버튼 클릭 시 temp 다시 렌더링 해줘야 함
 const LoadmapMenu = ({ temp }: LoadmapMenuProps) => {
   return (
     <section className={styles.roadmap_Menu}>

@@ -1,16 +1,10 @@
 import { style } from '@vanilla-extract/css';
 
-export const roadmap_Menu = style({
-  paddingBottom: 100,
-  paddingTop: 100,
-  textAlign: 'center',
-  width: '80%',
-  margin: 'auto',
+export const roadmapAreaLeft = style({
+  display: 'inline-block',
+  borderRight: '1px solid #fff',
+  boxSizing: 'border-box',
+  width: '20%',
 });
 
-export const container = style({
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  alignItems: 'flex-end',
-  paddingBottom: 80,
-});
+export const container = style({});

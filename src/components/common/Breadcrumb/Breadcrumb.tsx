@@ -1,4 +1,5 @@
 import React from 'react';
+import * as styles from './breadcrumb.css';
 
 type BreadcrumbProps = {
   title: string;
@@ -8,9 +9,9 @@ type BreadcrumbProps = {
 const Breadcrumb = ({ title, subTitle }: BreadcrumbProps) => {
   return (
     <section className="breadcrumb_area">
-      <div className="container">
-        <h3 className="breadcrumb_title">{title}</h3>
-        <h5 className="breadcrumb_subTitle">{subTitle}</h5>
+      <div className={styles.container}>
+        <h3 className={styles.breadcrumb_title}>{title}</h3>
+        <h5 className={styles.breadcrumb_subTitle}>{subTitle}</h5>
       </div>
     </section>
   );
