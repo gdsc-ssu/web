@@ -1,14 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
 }
 
 model test {
   id    Int    @id @default(autoincrement())
   test  String
   test2 String
+}
+
+model Activity {
+  id             Int             @id @default(autoincrement())
+  type           Type
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime?
+  status         String          @default("ACTIVE")
+  activityName   String
+  ActivityEnroll ActivityEnroll?
+  Github         Github?
+}
+
+model ActivityEnroll {
+  id         Int       @id @default(autoincrement())
+  activityId Int       @unique
+  memberId   Int       @unique
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime?
+  status     String    @default("ACTIVE")
+  Activity   Activity  @relation(fields: [activityId], references: [id])
+  Member     Member    @relation(fields: [memberId], references: [id])
+}
+
+model Github {
+  githubId   Int       @id @default(autoincrement())
+  activityId Int       @unique
+  githubURL  String    @db.VarChar(300)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime?
+  status     String    @default("ACTIVE")
+  Activity   Activity  @relation(fields: [activityId], references: [id])
+}
+
+model Member {
+  id               Int               @id @default(autoincrement())
+  memberName       String
+  profileImgURL    String            @db.VarChar(300)
+  githubURL        String            @db.VarChar(300)
+  memberEmail      String            @db.VarChar(300)
+  refreshToken     String            @db.VarChar(500)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime?
+  status           String            @default("ACTIVE")
+  ActivityEnroll   ActivityEnroll?
+  MemberSeasonInfo MemberSeasonInfo?
+}
+
+model MemberSeasonInfo {
+  id         Int                         @id @default(autoincrement())
+  seasonNum  Int
+  memberRole Role
+  activityId Int                         @unique
+  seasonId   Int
+  memberId   Int                         @unique
+  createdAt  DateTime                    @default(now())
+  updatedAt  DateTime?
+  status     String                      @default("ACTIVE")
+  memberPart MemberSeasonInfo_memverPart
+  Member     Member                      @relation(fields: [memberId], references: [id])
+  Season     Season                      @relation(fields: [seasonId], references: [id])
+}
+
+model Season {
+  id               Int                @id @default(autoincrement())
+  seasonNum        Int
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime?
+  status           String             @default("ACTIVE")
+  MemberSeasonInfo MemberSeasonInfo[]
+}
+
+enum MemberSeasonInfo_memverPart {
+  WEB_MOBILE
+  SERVER_CLOUD
+  AI
+}
+
+enum Role {
+  LEAD
+  CORE_MEMBER
+  MEMBER
+}
+
+enum Type {
+  STUDY
+  PROJECT
 }
