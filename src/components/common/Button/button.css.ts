@@ -2,12 +2,13 @@ import { style } from '@vanilla-extract/css';
 
 export const button = style({
   backgroundColor: '#000',
-  borderRadius: 20,
+  borderRadius: 30,
   border: '1px solid #fff',
   padding: 10,
   paddingLeft: 20,
   paddingRight: 20,
   color: '#fff',
+  fontSize: 20,
 
   ':hover': {
     backgroundImage:

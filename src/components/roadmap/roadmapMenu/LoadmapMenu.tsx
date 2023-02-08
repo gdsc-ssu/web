@@ -1,6 +1,7 @@
 import React from 'react';
 import * as styles from './roadmapMenu.css';
 import Button from '../../common/Button/Button';
+import LoadmapArea from '../roadmapArea/LoadmapArea';
 import { useState } from 'react';
 
 const LoadmapMenu = () => {
@@ -20,7 +21,7 @@ const LoadmapMenu = () => {
         <Button text={'AI/ML'} onClicking={onClick}></Button>
         <Button text={'DevOps'} onClicking={onClick}></Button>
       </div>
-      <div>2023 {text} RoadMap </div>
+      <div className={styles.title}>2023 {text} RoadMap </div>
     </section>
   );
 };

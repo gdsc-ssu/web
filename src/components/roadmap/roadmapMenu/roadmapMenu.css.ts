@@ -14,3 +14,8 @@ export const container = style({
   alignItems: 'flex-end',
   paddingBottom: 80,
 });
+
+export const title = style({
+  fontWeight: 700,
+  fontSize: 20,
+});

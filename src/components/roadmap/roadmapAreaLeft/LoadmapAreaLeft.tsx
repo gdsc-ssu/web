@@ -2,13 +2,17 @@ import React from 'react';
 import * as styles from './roadmapAreaLeft.css';
 
 type LoadmapAreaLeftProps = {
-  temp: string;
+  title: string;
+  subtitle: string;
 };
 
-const LoadmapAreaLeft = ({ temp }: LoadmapAreaLeftProps) => {
+const LoadmapAreaLeft = ({ title, subtitle }: LoadmapAreaLeftProps) => {
   return (
     <section className={styles.roadmapAreaLeft}>
-      <div className={styles.container}>{temp}</div>
+      <div className={styles.container}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.subtitle}>{subtitle}</div>
+      </div>
     </section>
   );
 };
