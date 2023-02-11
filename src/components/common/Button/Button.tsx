@@ -2,15 +2,14 @@ import * as styles from './button.css';
 
 interface Props {
   text: string;
-  onClicking: (name: string) => void;
+  onClickHandler: () => void;
 }
-
-const Button = ({ text, onClicking }: Props) => {
-  const handleClick = () => onClicking(text);
+const Button = (props: Props) => {
   return (
-    <button className={styles.button} onClick={handleClick}>
-      {text}
+    <button className={styles.button} onClick={props.onClickHandler}>
+      {props.text}
     </button>
   );
 };
+
 export default Button;
