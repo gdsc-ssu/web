@@ -1,7 +1,7 @@
 import React from 'react';
 import './app.css';
 import Breadcrumb from '../common/Breadcrumb/Breadcrumb';
-import RoadmapContent from './roadmapContent/LoadmapContent';
+import RoadmapContent from './RoadmapContent/RoadmapContent';
 
 const Roadmap = () => {
   return (
