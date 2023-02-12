@@ -19,7 +19,7 @@ function Second() {
   };
 
   const onCancel = (e: any) => {
-    e.preventDefault();
+    return;
   };
 
   useEffect(() => {
