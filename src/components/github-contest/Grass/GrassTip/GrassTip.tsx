@@ -11,12 +11,19 @@ export interface GrassTipPropsType {
   grassTipData: GrassTipDataType;
 }
 
-// TODO: x,y값에 따라 표시되는 위치 변경하기
+// TODO: style
 const GrassTip = ({ grassTipData }: GrassTipPropsType) => {
   const displayType = grassTipData.isHover ? 'block' : 'none';
   return (
-    <div className={styles.grassTipStyle[displayType]}>
-      {grassTipData.infoText}
+    <div
+      className={styles.grassTipStyle[displayType]}
+      style={{
+        top: grassTipData.y - 5,
+        left: grassTipData.x,
+      }}
+    >
+      <div>{grassTipData.infoText}</div>
+      <div className={styles.pointStyle}></div>
     </div>
   );
 };
