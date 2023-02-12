@@ -1,4 +1,4 @@
-import { DevTestPage } from '@/components/comuunity';
+import { DevTestPage } from '@/components/community';
 
 /**
  * 개발자 성향 테스트 페이지
