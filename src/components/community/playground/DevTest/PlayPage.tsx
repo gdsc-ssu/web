@@ -1,8 +1,8 @@
 import { questions } from '@/resources/devTestQustions';
 import { useState } from 'react';
 import { Button, TitleBox } from '../common';
-import { COLORS } from '../common/token';
 import type { StepProps } from './types';
+import * as styles from './devtest.css';
 
 interface Props extends StepProps {}
 
@@ -14,23 +14,14 @@ const PlayPage = (props: Props) => {
   );
 
   return (
-    <div className="devtest__play-page">
-      <div className="devtest__play-page--question">
+    <div className={styles.playPage}>
+      <div className={styles.questionArea}>
         <TitleBox title={`Q${idx + 1}`} subtitle={questions[idx].question} />
       </div>
-      <div className="devtest__play-page--select">
+      <div className={styles.questionArea}>
         {questions[idx].select.map((s, aIdx) => (
           <Button
-            backgroundColor={
-              answers[idx] === aIdx
-                ? COLORS.grayscale.Black
-                : COLORS.grayscale.white
-            }
-            color={
-              answers[idx] === aIdx
-                ? COLORS.grayscale.white
-                : COLORS.grayscale.Black
-            }
+            selected={answers[idx] === aIdx ? 0 : 1}
             title={s}
             onClick={() =>
               setAnswers((prev) => prev.map((p, pi) => (idx === pi ? aIdx : p)))
@@ -40,8 +31,7 @@ const PlayPage = (props: Props) => {
         ))}
       </div>
       <Button
-        backgroundColor="white"
-        color={COLORS.SSU.DeepBlue}
+        selected={2}
         title="다음 질문으로!"
         onClick={
           () =>
@@ -50,25 +40,6 @@ const PlayPage = (props: Props) => {
               : onEnd() //마지막 질문이라면 -> 다음 스테이지로
         }
       />
-      <style jsx>{`
-        .devtest__play-page {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 50px;
-        }
-        .devtest__play-page--question,
-        .devtest__play-page--select {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 15px;
-        }
-      `}</style>
     </div>
   );
 };

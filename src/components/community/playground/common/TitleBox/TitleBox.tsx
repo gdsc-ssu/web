@@ -1,4 +1,4 @@
-import { TEXT_STYLE_TITLE_PC, TEXT_STYLE_TITLE_MOBILE, COLORS } from '../token';
+import * as styles from './TitleBox.css';
 
 interface Props {
   title: string;
@@ -12,47 +12,9 @@ interface Props {
  */
 const TitleBox = (props: Props) => {
   return (
-    <div>
-      <span>{props.title}</span>
-      <span>{props.subtitle}</span>
-      <style jsx>{`
-        div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 5px;
-          color: white;
-        }
-
-        div > span:nth-child(1) {
-          font-size: ${TEXT_STYLE_TITLE_PC.title.fontSize}px;
-          font-weight: ${TEXT_STYLE_TITLE_PC.title.fontWeight};
-          text-align: center;
-          text-shadow: 0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8};
-        }
-
-        div > span:nth-child(2) {
-          font-size: ${TEXT_STYLE_TITLE_PC.subtitle3.fontSize}px;
-          font-weight: ${TEXT_STYLE_TITLE_PC.subtitle3.fontWeight};
-          white-space: pre-line;
-          word-break: keep-all;
-          text-align: center;
-          text-shadow: 0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8};
-        }
-
-        @media screen and (max-width: 500px) {
-          div > span:nth-child(1) {
-            font-size: ${TEXT_STYLE_TITLE_MOBILE.title.fontSize}px;
-            font-weight: ${TEXT_STYLE_TITLE_MOBILE.title.fontWeight};
-          }
-
-          div > span:nth-child(2) {
-            font-size: ${TEXT_STYLE_TITLE_MOBILE.subtitle3.fontSize}px;
-            font-weight: ${TEXT_STYLE_TITLE_MOBILE.subtitle3.fontWeight};
-          }
-        }
-      `}</style>
+    <div className={styles.titleBox['box']}>
+      <span className={styles.titleBox['title']}>{props.title}</span>
+      <span className={styles.titleBox['subtitle']}>{props.subtitle}</span>
     </div>
   );
 };

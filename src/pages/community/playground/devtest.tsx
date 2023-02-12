@@ -1,6 +1,6 @@
-import { Wrapper, PlayPage, StartPage } from '@/components/community/index';
+import { PlayPage, StartPage } from '@/components/community/index';
 import { useState } from 'react';
-import { COLORS } from '@/components/community/playground/common/token';
+import * as styles from '@/components/community/playground/playground.css';
 
 const STAGES = [StartPage, PlayPage] as const;
 
@@ -16,20 +16,10 @@ const DevTestPage = () => {
   };
 
   return (
-    <div className="devtest__page">
-      <Wrapper topColor={COLORS.SSU.Blue} bottomColor={COLORS.SSU.SkyBlue}>
+    <div className={styles.devtestPage}>
+      <div className={styles.wrapper['devtest']}>
         <CurrentPage onEnd={goToNextStep} />
-      </Wrapper>
-      <style jsx>{`
-        .devtest__page {
-          padding: 0;
-          margin: 0;
-          background-color: black;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
+      </div>
     </div>
   );
 };

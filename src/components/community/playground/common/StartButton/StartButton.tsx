@@ -1,51 +1,24 @@
-import { TEXT_STYLE_BUTTON_PC, TEXT_STYLE_BUTTON_MOBILE } from '../token';
+import * as styles from './StartButton.css';
 
-interface Props {
-  color: string; //글자색
-  title: string; //버튼 텍스트
-  onClickHandler: () => void;
+const Themes = ['devTest', 'fortune'] as const;
+
+interface Props extends React.ComponentProps<'button'> {
+  /** 0 : devTest
+   * 1 : fortune
+   * 둘 중 하나 */
+  theme: number;
+  title: string;
 }
 
 /**
  * 플레이그라운드에서 사용하는 시작버튼
- * @param color 글자색
- * @param title 버튼 텍스트
- * @param onClickHandler 클릭 이벤트핸들러
+ *
  */
-const StartButton = (props: Props) => {
+const StartButton = ({ theme, title, ...buttonProps }: Props) => {
+  const Theme = Themes[theme];
   return (
-    <button onClick={props.onClickHandler}>
-      {props.title}
-      <style jsx>{`
-        button {
-          border: none;
-          background-color: white;
-          width: 65%;
-          min-width: 220px;
-          height: 55px;
-          border-radius: 20px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 50px;
-
-          font-size: ${TEXT_STYLE_BUTTON_PC.button1B.fontSize}px;
-          font-weight: 800;
-          font-family: 'SUIT Variable', sans-serif;
-          white-space: pre-line;
-          word-break: keep-all;
-          text-align: center;
-          color: ${props.color};
-        }
-
-        @media screen and (max-width: 500px) {
-          button {
-            font-size: ${TEXT_STYLE_BUTTON_MOBILE.button1B.fontSize}px;
-            font-weight: 800;
-          }
-        }
-      `}</style>
+    <button {...buttonProps} className={styles.startBtn[Theme]}>
+      {title}
     </button>
   );
 };
