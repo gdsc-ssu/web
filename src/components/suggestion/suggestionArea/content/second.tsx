@@ -3,9 +3,9 @@ import * as styles from './content.css';
 import Button from '../../../common/Button/Button';
 
 function Second() {
-  const [inputValue, setInputValue] = useState('');
-
-  const [newTodo, setNewTodo] = useState('');
+  const [content, setContent] = useState([{ content: '' }]);
+  let [inputValue, setInputValue] = useState('');
+  let [newContent, setNewContent] = useState({ content: '' });
 
   const inputChg = (e: any) => {
     setInputValue(e.target.value);
@@ -13,17 +13,22 @@ function Second() {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    // setTodo([...todo, newTodo]);
+    setNewContent({ content: inputValue });
+    setContent([...content, newContent]);
     setInputValue('');
   };
 
-  // useEffect(() => {
-  //   setNewTodo(inputValue);
-  // }, [inputValue]);
+  const onCancel = (e: any) => {
+    e.preventDefault();
+  };
 
   useEffect(() => {
-    localStorage.setItem('todoKey', JSON.stringify(inputValue));
+    setNewContent({ content: inputValue });
   }, [inputValue]);
+
+  useEffect(() => {
+    localStorage.setItem('suggestion', JSON.stringify(content));
+  }, [content]);
 
   return (
     <>
@@ -36,7 +41,7 @@ function Second() {
             value={inputValue}
             onChange={inputChg}
           ></input>
-          <Button text="작성 취소하기" onClickHandler={() => onSubmit} />
+          <Button text="작성 취소하기" onClickHandler={() => onCancel} />
           <Button text="건의사항 전송하기" onClickHandler={() => onSubmit} />
         </form>
       </div>
