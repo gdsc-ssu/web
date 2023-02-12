@@ -1,3 +1,5 @@
-import DevTestPage from './playground/DevTest';
+import Wrapper from './playground/Wrapper';
+import StartPage from './playground/DevTest/StartPage';
+import PlayPage from './playground/DevTest/PlayPage';
 
-export { DevTestPage };
+export { Wrapper, StartPage, PlayPage };

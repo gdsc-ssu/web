@@ -1,10 +1,37 @@
-import { DevTestPage } from '@/components/community';
+import { Wrapper, PlayPage, StartPage } from '@/components/community/index';
+import { useState } from 'react';
+import { COLORS } from '@/components/community/playground/common/token';
+
+const STAGES = [StartPage, PlayPage] as const;
 
 /**
- * 개발자 성향 테스트 페이지
+ * 개발자 성향테스트 페이지 최상위 Wrapper
  */
-const DevTest = () => {
-  return <DevTestPage />;
+const DevTestPage = () => {
+  const [stage, setStage] = useState(0);
+  const CurrentPage = STAGES[stage];
+
+  const goToNextStep = () => {
+    setStage((prev) => prev + 1);
+  };
+
+  return (
+    <div className="devtest__page">
+      <Wrapper topColor={COLORS.SSU.Blue} bottomColor={COLORS.SSU.SkyBlue}>
+        <CurrentPage onEnd={goToNextStep} />
+      </Wrapper>
+      <style jsx>{`
+        .devtest__page {
+          padding: 0;
+          margin: 0;
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      `}</style>
+    </div>
+  );
 };
 
-export default DevTest;
+export default DevTestPage;
