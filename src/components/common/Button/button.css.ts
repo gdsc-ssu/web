@@ -7,6 +7,7 @@ export const button = style({
   padding: 10,
   paddingLeft: 20,
   paddingRight: 20,
+  margin: 10,
   color: '#fff',
   fontSize: 20,
 
