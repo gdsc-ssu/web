@@ -35,6 +35,7 @@ export const inputStyle = style({
   color: 'white',
   width: '85%',
   height: 40,
+  border: 'none',
   borderBottom: '1px solid #fff',
   display: 'block',
   fontSize: 20,
