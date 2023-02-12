@@ -2,21 +2,25 @@ import Wrapper from '../Wrapper';
 import StartPage from './StartPage';
 import PlayPage from './PlayPage';
 import { useState } from 'react';
+import { COLORS } from '../common/token';
+
+const STAGES = [StartPage, PlayPage] as const;
 
 /**
  * 개발자 성향테스트 페이지 최상위 Wrapper
  */
 const DevTestPage = () => {
   const [stage, setStage] = useState(0);
+  const CurrentPage = STAGES[stage];
+
+  const goToNextStep = () => {
+    setStage((prev) => prev + 1);
+  };
 
   return (
     <div className="devtest__page">
-      <Wrapper topColor="#00A4CA" bottomColor="#58C4C4">
-        {stage === 0 ? (
-          <StartPage setStage={setStage} />
-        ) : (
-          <PlayPage setStage={setStage} />
-        )}
+      <Wrapper topColor={COLORS.SSU.Blue} bottomColor={COLORS.SSU.SkyBlue}>
+        <CurrentPage onEnd={goToNextStep} />
       </Wrapper>
       <style jsx>{`
         .devtest__page {

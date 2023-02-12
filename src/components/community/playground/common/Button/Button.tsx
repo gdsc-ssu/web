@@ -1,26 +1,22 @@
 import { TEXT_STYLE_BUTTON_PC, TEXT_STYLE_BUTTON_MOBILE } from '../token';
 
-interface Props {
+interface Props extends React.ComponentProps<'button'> {
   backgroundColor: string;
   color: string;
   title: string;
-  onClickHandler: () => void;
 }
+
 /**
  * 테스트 중 사용될 일반 버튼
- * @param backgroundColor 배경색
- * @param color 글자색
- * @param title 버튼 텍스트
- * @param onClickHandler 클릭 이벤트핸들러
  */
-const Button = (props: Props) => {
+const Button = ({ backgroundColor, color, title, ...buttonProps }: Props) => {
   return (
-    <button onClick={props.onClickHandler}>
-      {props.title}
+    <button {...buttonProps}>
+      {title}
       <style jsx>{`
         button {
           border: none;
-          background-color: ${props.backgroundColor};
+          background-color: ${backgroundColor};
           width: 90%;
           min-width: 270px;
           min-height: 50px;
@@ -37,7 +33,7 @@ const Button = (props: Props) => {
           white-space: pre-line;
           word-break: keep-all;
           text-align: center;
-          color: ${props.color};
+          color: ${color};
         }
 
         @media screen and (max-width: 500px) {

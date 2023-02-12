@@ -1,13 +1,13 @@
 import { questions } from '@/resources/devTestQustions';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { Button, TitleBox } from '../common';
 import { COLORS } from '../common/token';
+import type { StepProps } from './types';
 
-interface Props {
-  setStage: Dispatch<SetStateAction<number>>;
-}
+interface Props extends StepProps {}
 
 const PlayPage = (props: Props) => {
+  const { onEnd } = props;
   const [idx, setIdx] = useState(0);
   const [answers, setAnswers] = useState<Array<number>>(
     Array(questions.length).fill(0),
@@ -32,7 +32,7 @@ const PlayPage = (props: Props) => {
                 : COLORS.grayscale.Black
             }
             title={s}
-            onClickHandler={() =>
+            onClick={() =>
               setAnswers((prev) => prev.map((p, pi) => (idx === pi ? aIdx : p)))
             }
             key={s}
@@ -43,11 +43,11 @@ const PlayPage = (props: Props) => {
         backgroundColor="white"
         color={COLORS.SSU.DeepBlue}
         title="다음 질문으로!"
-        onClickHandler={
+        onClick={
           () =>
             idx !== questions.length - 1 //마지막 질문이 아니라면
               ? setIdx((prev) => prev + 1) //다음 질문으로
-              : props.setStage((prev) => prev + 1) //마지막 질문이라면 -> 다음 스테이지로
+              : onEnd() //마지막 질문이라면 -> 다음 스테이지로
         }
       />
       <style jsx>{`

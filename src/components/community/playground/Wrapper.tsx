@@ -1,13 +1,13 @@
 interface Props {
   children: React.ReactNode;
+  /** 왼쪽 상단 색상 색상 코드(eg. #00A4CA) */
   topColor: string;
+  /** 우측 하단 색상 색상 코드 */
   bottomColor: string;
 }
 
 /**
  * 모바일 중심형 페이지 Wrapper Component
- * @param topColor 왼쪽 상단 색상 헥사코드(eg. #00A4CA)
- * @param bottomColor 우측 하단 색상 헥사코드
  */
 const Wrapper = (props: Props) => {
   return (

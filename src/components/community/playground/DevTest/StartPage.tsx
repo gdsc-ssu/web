@@ -5,16 +5,15 @@ import {
   TEXT_STYLE_BODY_MOBILE,
 } from '../common/token';
 import { devTestLogo } from '@/resources/communityRes';
-import { Dispatch, SetStateAction } from 'react';
+import type { StepProps } from './types';
 
-interface Props {
-  setStage: Dispatch<SetStateAction<number>>;
-}
+interface Props extends StepProps {}
 
 /**
  * 시작하기 버튼이 있는 테스트 시작 페이지
  */
 const StartPage = (props: Props) => {
+  const { onEnd } = props;
   return (
     <div className="devtest__first-page">
       <TitleBox
@@ -25,7 +24,7 @@ const StartPage = (props: Props) => {
       <StartButton
         color={COLORS.SSU.DeepBlue}
         title="시작하기"
-        onClickHandler={() => props.setStage((prev) => prev + 1)}
+        onClickHandler={() => onEnd()}
       />
       <span>GDSC Soongsil Univ.</span>
       <img src={devTestLogo} alt="devtest-logo" />
