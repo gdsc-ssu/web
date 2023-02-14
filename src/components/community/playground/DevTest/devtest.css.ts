@@ -24,6 +24,9 @@ export const firstPage = style({
     [MEDIA_QUERY.pc]: {
       paddingTop: '120px',
     },
+    [`screen and (min-height: ${BREAKPOINTS[1]}px)`]: {
+      paddingTop: '120px',
+    },
   },
 });
 
@@ -38,6 +41,7 @@ export const playPage = style({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '50px',
+  position: 'relative',
 });
 
 /**
@@ -57,9 +61,17 @@ export const text = styleVariants({
 
 export const decoImg = style({
   width: '65%',
-  height: 'auto',
+  height: '40%',
   position: 'absolute',
   bottom: '0px',
   left: '50%',
   transform: 'translateX(-50%)',
+});
+
+export const progress = style({
+  width: '90%',
+  position: 'absolute',
+  top: '20px',
+  left: '50%',
+  transform: 'translate(-50%, 0)',
 });

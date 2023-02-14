@@ -77,7 +77,7 @@ export const foxDev: DevType = {
     '무엇을 해야 사람들이 날 좋아하는지 알고있어요.',
     '머리가 비범한 편이라, 남들보다 적게 공부하고 많이 배워요.',
     '팀 리더? 귀찮지만 꽤 재밌어요.',
-    '머릿 속 계산 속도가 슈퍼컴퓨터 급이에요.',
+    '매력이 흘러 넘쳐요. 주변에는 항상 사람이 바글바글!',
     '느리고 비효율적인 것들을 싫어해요.',
   ],
 };
@@ -132,11 +132,11 @@ export const questions: Array<Questions> = [
       },
       {
         type: [foxDev, vitaminDev, artistDev],
-        answer: '사람들에게 내가 얼마나 뛰어난 개발자인지 알려줘야겠군.',
+        answer: '내가 얼마나 뛰어난 개발자인지 알려줘야겠군.',
       },
       {
         type: [imagineDev, plannerDev, fighterDev],
-        answer: '일단 들어가서 인사를... 아 괜히 말실수하는거 아냐? 개떨려...',
+        answer: '일단 들어가서 인사를...\n아 괜히 말실수하는거 아냐? 개떨려...',
       },
       {
         type: [foxDev, plannerDev, fighterDev],
@@ -151,11 +151,11 @@ export const questions: Array<Questions> = [
       {
         type: [vitaminDev, plannerDev, fighterDev],
         answer:
-          '너무 반가워요! 서로 도와주면서 잘 지내봐요!(좋은 사람인 것 같다!)',
+          '반가워요! 서로 도와주면서 잘 지내봐요!\n(좋은 사람인 것 같다!)',
       },
       {
         type: [artistDev, plannerDev, foxDev],
-        answer: '너무 반가워요! 서로 도와주면서 잘 지내봐요^^(말좀 그만 걸어)',
+        answer: '반가워요! 서로 도와주면서 잘 지내봐요^^\n(말좀 그만 걸어)',
       },
       {
         type: [artistDev, foxDev, imagineDev],
@@ -163,8 +163,7 @@ export const questions: Array<Questions> = [
       },
       {
         type: [vitaminDev, fighterDev, imagineDev],
-        answer:
-          '아진짜요?LA갈비를얘기하셔서갑자기생각난건데제가LA에있을때말이죠...',
+        answer: '아진짜요?\n갑자기생각난건데제가LA에있을때말이죠...',
       },
     ],
   },
@@ -230,7 +229,7 @@ export const questions: Array<Questions> = [
       },
       {
         type: [vitaminDev, plannerDev, fighterDev],
-        answer: '동기랑 같이 이야기하면서 해결해봐야지! 카톡을 해봐야겠다.',
+        answer: '동기랑 같이 이야기하면서 해결해봐야지!\n카톡을 해봐야겠다.',
       },
     ],
   },
@@ -244,11 +243,11 @@ export const questions: Array<Questions> = [
       },
       {
         type: [vitaminDev, plannerDev, imagineDev],
-        answer: '선배님, 제 업무가 맞는지 확인좀 부탁드려도 될까요?(제발...)',
+        answer: '선배님, 제 업무가 맞는지 확인 부탁드려도 될까요?\n(제발...)',
       },
       {
         type: [artistDev, foxDev, fighterDev],
-        answer: '선배님, 제 업무가 맞는지 확인좀 부탁드려도 될까요?(장난하냐?)',
+        answer: '선배님, 제 업무가 맞는지 확인 부탁드려도 될까요?\n(장난하냐?)',
       },
       {
         type: [foxDev, fighterDev, imagineDev],
@@ -258,7 +257,7 @@ export const questions: Array<Questions> = [
   },
   {
     question:
-      '주변 사람들에게 물어보니, 일단 외우라고 한다.\n관련 자료도 받았는데...',
+      '주변 사람들에게 물어보니, 일단 외우라고 한다.\n관련 자료도 받긴 받았는데...',
     select: [
       {
         type: [vitaminDev, fighterDev, imagineDev],
@@ -296,7 +295,7 @@ export const questions: Array<Questions> = [
       },
       {
         type: [plannerDev, fighterDev, imagineDev],
-        answer: '(오만가지 상상 중) 팀플하다 싸우진 않겠지...',
+        answer: '(오만가지 상상 중)\n팀플하다 싸우진 않겠지...',
       },
     ],
   },
@@ -334,7 +333,7 @@ export const questions: Array<Questions> = [
       },
       {
         type: [plannerDev, foxDev, imagineDev],
-        answer: '아이고... 이따 술이나 한잔 할래?',
+        answer: '이따 술이나 한잔 할래?',
       },
       {
         type: [vitaminDev, plannerDev, fighterDev],

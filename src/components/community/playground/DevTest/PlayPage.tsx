@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button, TitleBox } from '../common';
 import type { StepProps } from './types';
 import * as styles from './devtest.css';
+import ProgressBar from './ProgressBar/ProgressBar';
 
 interface Props extends StepProps {}
 
@@ -15,6 +16,9 @@ const PlayPage = (props: Props) => {
 
   return (
     <div className={styles.playPage}>
+      <span className={styles.progress}>
+        <ProgressBar curIdx={idx} />
+      </span>
       <div className={styles.questionArea}>
         <TitleBox title={`Q${idx + 1}`} subtitle={questions[idx].question} />
       </div>
@@ -22,11 +26,11 @@ const PlayPage = (props: Props) => {
         {questions[idx].select.map((s, aIdx) => (
           <Button
             selected={answers[idx] === aIdx ? 0 : 1}
-            title={s}
+            title={s.answer}
             onClick={() =>
               setAnswers((prev) => prev.map((p, pi) => (idx === pi ? aIdx : p)))
             }
-            key={s}
+            key={s.answer}
           />
         ))}
       </div>
