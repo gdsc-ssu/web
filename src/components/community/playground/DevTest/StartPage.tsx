@@ -2,6 +2,7 @@ import { StartButton, TitleBox, VisitorBox } from '../common';
 import * as styles from './devtest.css';
 import { devTestLogo } from '@/resources/communityRes';
 import type { StepProps } from './types';
+import Image from 'next/image';
 
 interface Props extends StepProps {}
 
@@ -19,7 +20,9 @@ const StartPage = (props: Props) => {
       <VisitorBox today={10} sum={100} />
       <StartButton theme={0} title="시작하기" onClick={() => onEnd()} />
       <span className={styles.text['title']}>GDSC Soongsil Univ.</span>
-      <img className={styles.decoImg} src={devTestLogo} alt="devtest-logo" />
+      <span className={styles.decoImg}>
+        <Image fill src={devTestLogo} alt="devtest-logo" />
+      </span>
     </div>
   );
 };

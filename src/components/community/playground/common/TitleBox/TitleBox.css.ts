@@ -27,6 +27,7 @@ export const titleBox = styleVariants({
       wordBreak: 'keep-all',
       textAlign: 'center',
       textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+      lineHeight: '27px',
     },
   ],
 });

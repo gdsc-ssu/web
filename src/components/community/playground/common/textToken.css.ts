@@ -137,7 +137,7 @@ export const btnText = styleVariants({
     fontWeight: 800,
     '@media': {
       [MEDIA_QUERY.mobile]: {
-        fontSize: 12,
+        fontSize: 18,
         fontWeight: 800,
       },
     },
