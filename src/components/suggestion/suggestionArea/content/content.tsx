@@ -32,18 +32,16 @@ function Content() {
     <>
       {first && <First />}
       {first && (
-        <Button text="건의사항 작성하기" onClickHandler={() => onSecond()} />
+        <Button content="건의사항 작성하기" onClick={() => onSecond()} />
       )}
       {second && <Second />}
+      {second && <Button content="작성 취소하기" onClick={() => onFirst()} />}
       {second && (
-        <Button text="작성 취소하기" onClickHandler={() => onFirst()} />
-      )}
-      {second && (
-        <Button text="건의사항 전송하기" onClickHandler={() => onThird()} />
+        <Button content="건의사항 전송하기" onClick={() => onThird()} />
       )}
       {third && <Third />}
       {third && (
-        <Button text="건의사항 작성하기" onClickHandler={() => onFirst()} />
+        <Button content="건의사항 작성하기" onClick={() => onFirst()} />
       )}
     </>
   );
