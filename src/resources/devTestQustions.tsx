@@ -1,3 +1,12 @@
+import vitamin from './assets/vitamin.svg';
+import artist from './assets/artist.svg';
+import planner from './assets/planner.svg';
+import fox from './assets/fox.svg';
+import fighter from './assets/fighter.svg';
+import imagine from './assets/imagine.svg';
+
+export const images = [vitamin, artist, planner, fox, fighter, imagine];
+
 export enum Part {
   WM = 'Web/Mobile',
   SC = 'Server/Cloud',
@@ -41,7 +50,7 @@ export const vitaminDev: DevType = {
   content: [
     '어디서든 인기만점인 당신은 비타민 같아요!',
     '팀 프로젝트가 너무 좋아요! 항상 설레요!',
-    '아주 열심히 일하지만, 나에게 1순위늰 언제나 행복이에요.',
+    '아주 열심히 일하지만, 나에게 1순위는 언제나 행복이에요.',
     '어둡고 칙칙한 것은 싫어. 생기있는게 좋아요.',
     '친구가 힘들바엔, 그냥 내가 힘든게 나아요. 버스기사 장인!',
     '나의 지친 모습은 아무에게도 보여주기 싫어요!',

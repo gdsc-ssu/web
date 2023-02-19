@@ -41,7 +41,23 @@ export const button = styleVariants({
     btnText.button4B,
     {
       backgroundColor: `white`,
-      color: `${COLORS.SSU.DeepBlue}`,
+      color: COLORS.SSU.DeepBlue,
+    },
+  ],
+  result: [
+    btnBase,
+    btnText.button2B,
+    {
+      backgroundColor: COLORS.grayscale.white,
+      color: COLORS.SSU.DeepBlue,
+    },
+  ],
+  gradient: [
+    btnBase,
+    btnText.button4B,
+    {
+      background: `linear-gradient(135deg, ${COLORS.GDSC.Blue}, ${COLORS.GDSC.Red})`,
+      color: COLORS.grayscale.white,
     },
   ],
 });

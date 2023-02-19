@@ -1,5 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 import { bodyText } from '../common/textToken.css';
+import { titleText } from '../common/textToken.css';
+import { COLORS } from '../common/colorToken';
 
 const BREAKPOINTS = [500, 800] as const;
 const MEDIA_QUERY = {
@@ -74,4 +76,52 @@ export const progress = style({
   top: '20px',
   left: '50%',
   transform: 'translate(-50%, 0)',
+});
+
+export const resultPage = styleVariants({
+  container: [
+    {
+      padding: '60px 30px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '30px',
+    },
+  ],
+  btnBox: [
+    {
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '10px',
+    },
+  ],
+});
+
+export const resultTitle = styleVariants({
+  box: [
+    {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '5px',
+      whiteSpace: 'pre-line',
+      textAlign: 'center',
+    },
+  ],
+  title: [
+    titleText.subtitle1,
+    {
+      color: COLORS.grayscale.white,
+      textShadow: '1px 1px 2px #14141460',
+    },
+  ],
+  subtitle: [
+    titleText.subtitle2B,
+    {
+      color: COLORS.grayscale.white,
+      textShadow: '1px 1px 2px #14141460',
+    },
+  ],
 });
