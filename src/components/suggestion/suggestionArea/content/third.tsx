@@ -16,7 +16,6 @@ function Third() {
           최대한 빠른 시일 내에 확인하고, 반영할 수 있도록 노력하겠습니다.
         </div>
       </div>
-      <Button text="건의사항 작성하기" onClickHandler={() => onclicking()} />
     </>
   );
 }

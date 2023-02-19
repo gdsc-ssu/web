@@ -42,6 +42,9 @@ function Content() {
         <Button text="건의사항 전송하기" onClickHandler={() => onThird()} />
       )}
       {third && <Third />}
+      {third && (
+        <Button text="건의사항 작성하기" onClickHandler={() => onFirst()} />
+      )}
     </>
   );
 }
