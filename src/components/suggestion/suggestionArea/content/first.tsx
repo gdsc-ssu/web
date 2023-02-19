@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as styles from './content.css';
-import Button from '../../../common/Button/Button';
 
 function First() {
-  const onclicking = () => {
-    console.log('click button');
-  };
-
   return (
     <>
       <div className={styles.container}>
@@ -16,7 +11,6 @@ function First() {
           <br /> 작성한 내용은 GDSC Lead에게 전달됩니다.
         </div>
       </div>
-      <Button text="건의사항 작성하기" onClickHandler={() => onclicking()} />
     </>
   );
 }
