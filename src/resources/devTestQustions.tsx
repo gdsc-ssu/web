@@ -4,7 +4,17 @@ export enum Part {
   AM = 'AI/ML',
 }
 
+export enum Dev {
+  Vitamin,
+  Artist,
+  Planner,
+  Fox,
+  Fighter,
+  Imagine,
+}
+
 export interface DevType {
+  name: Dev;
   title: string;
   subtitle: string;
   type: string;
@@ -23,6 +33,7 @@ export interface Answer {
 }
 
 export const vitaminDev: DevType = {
+  name: Dev.Vitamin,
   title: '놀기 위해 개발하는거 아니겠어?',
   subtitle: '회식이 제일 좋아! 노는게 제일 좋아!',
   type: '분위기 메이커 비타민 개발자',
@@ -38,6 +49,7 @@ export const vitaminDev: DevType = {
 };
 
 export const artistDev: DevType = {
+  name: Dev.Artist,
   title: '소피, 아름답지 않은면 살아도 산게 아니야.',
   subtitle: '섬세함과 완벽함은 나의 원동력!',
   type: '하울 스타일의 예술가 개발자',
@@ -53,6 +65,7 @@ export const artistDev: DevType = {
 };
 
 export const plannerDev: DevType = {
+  name: Dev.Planner,
   title: '잠깐, 이건 내 계획에 없었는데...? 죽을게.',
   subtitle: '뭐든지 철저한 계획은 기본!',
   type: '인간 플래너 그 자체 개발자',
@@ -68,6 +81,7 @@ export const plannerDev: DevType = {
 };
 
 export const foxDev: DevType = {
+  name: Dev.Fox,
   title: '검은 화면에 코드를 적어내려가는 모습.. 멋있지? 반했지?',
   subtitle: '스타벅스에서 개발하는 모습 보여주면 다 나한테 반하더라...',
   type: '인간 퐉스 개발자',
@@ -83,6 +97,7 @@ export const foxDev: DevType = {
 };
 
 export const fighterDev: DevType = {
+  name: Dev.Fighter,
   title: '잠깐 나 궁금한거 있어, 아 아니 싸우자는거 아니야!',
   subtitle: '데브톡 얼마나 재밌게요~',
   type: '인간 100분 토론 개발자',
@@ -98,6 +113,7 @@ export const fighterDev: DevType = {
 };
 
 export const imagineDev: DevType = {
+  name: Dev.Imagine,
   title: '(개발자 성향 테스트하다가 갑자기 지구멸망하면 어떡하지...?)',
   subtitle: '일상에서 상상하는 시간을 빼보라구요?',
   type: '그럼 하루가 없어지는 개발자',

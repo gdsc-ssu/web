@@ -1,49 +1,103 @@
 import { questions } from '@/resources/devTestQustions';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, TitleBox } from '../common';
 import type { StepProps } from './types';
 import * as styles from './devtest.css';
 import ProgressBar from './ProgressBar/ProgressBar';
+import { DevType, results } from '@/resources/devTestQustions';
 
-interface Props extends StepProps {}
+interface Props extends StepProps {
+  saveResult?: (res: DevType) => void;
+}
 
 const PlayPage = (props: Props) => {
-  const { onEnd } = props;
+  const { onEnd, saveResult } = props;
   const [idx, setIdx] = useState(0);
   const [answers, setAnswers] = useState<Array<number>>(
     Array(questions.length).fill(0),
   );
+  const [choices, setChoices] = useState<Array<DevType>>(
+    questions[0].select[0].type,
+  );
+  const [types, setTypes] = useState<Array<DevType>>([]);
+
+  const choice = (aIdx: number, devType: Array<DevType>) => {
+    setChoices(devType);
+    setAnswers((prev) => prev.map((p, pi) => (idx === pi ? aIdx : p)));
+  };
+
+  const moveToNext = () => {
+    setTypes((prev) => [...prev, ...choices]);
+    setIdx((prev) => prev + 1);
+  };
+
+  const getMode = () => {
+    const devTypes = types.map((type) => type.name);
+
+    const counts = {
+      0: 0,
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+    };
+
+    const newObject = devTypes.reduce((acc, cur) => {
+      acc.hasOwnProperty(cur) ? (acc[cur] += 1) : (acc[cur] = 1);
+      return acc;
+    }, counts);
+
+    const modeKey: number = Object.keys(newObject)
+      .map((a) => Number(a))
+      .reduce((acc, cur) => (newObject[acc] > newObject[cur] ? acc : cur));
+
+    saveResult(results[modeKey]);
+  };
+
+  useEffect(() => {
+    if (idx == questions.length) {
+      getMode();
+      onEnd();
+    } else {
+      setChoices(questions[idx].select[0].type);
+    }
+  }, [idx]);
 
   return (
     <div className={styles.playPage}>
-      <span className={styles.progress}>
-        <ProgressBar curIdx={idx} />
-      </span>
-      <div className={styles.questionArea}>
-        <TitleBox title={`Q${idx + 1}`} subtitle={questions[idx].question} />
-      </div>
-      <div className={styles.questionArea}>
-        {questions[idx].select.map((s, aIdx) => (
+      {questions[idx] ? (
+        <>
+          <span className={styles.progress}>
+            <ProgressBar curIdx={idx} />
+          </span>
+          <div className={styles.questionArea}>
+            <TitleBox
+              title={`Q${idx + 1}`}
+              subtitle={questions[idx].question}
+            />
+          </div>
+          <div className={styles.questionArea}>
+            {questions[idx].select.map((s, aIdx) => (
+              <Button
+                selected={answers[idx] === aIdx ? 0 : 1}
+                title={s.answer}
+                onClick={() => choice(aIdx, s.type)}
+                key={s.answer}
+              />
+            ))}
+          </div>
           <Button
-            selected={answers[idx] === aIdx ? 0 : 1}
-            title={s.answer}
-            onClick={() =>
-              setAnswers((prev) => prev.map((p, pi) => (idx === pi ? aIdx : p)))
+            selected={2}
+            title={
+              idx !== questions.length - 1 ? '다음 질문으로!' : '결과 확인하기!'
             }
-            key={s.answer}
+            onClick={moveToNext}
           />
-        ))}
-      </div>
-      <Button
-        selected={2}
-        title="다음 질문으로!"
-        onClick={
-          () =>
-            idx !== questions.length - 1 //마지막 질문이 아니라면
-              ? setIdx((prev) => prev + 1) //다음 질문으로
-              : onEnd() //마지막 질문이라면 -> 다음 스테이지로
-        }
-      />
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
