@@ -26,7 +26,7 @@ export const progress = styleVariants({
   inner__0: [
     innerBase,
     {
-      width: `0%`,
+      width: `2%`,
     },
   ],
   inner__1: [
