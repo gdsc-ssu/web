@@ -10,6 +10,10 @@ interface Props extends StepProps {
   saveResult?: (res: DevType) => void;
 }
 
+type Count = {
+  [key: number]: number;
+};
+
 const PlayPage = (props: Props) => {
   const { onEnd, saveResult } = props;
   const [idx, setIdx] = useState(0);
@@ -34,7 +38,7 @@ const PlayPage = (props: Props) => {
   const getMode = () => {
     const devTypes = types.map((type) => type.name);
 
-    const counts = {
+    const counts: Count = {
       0: 0,
       1: 0,
       2: 0,
@@ -52,7 +56,7 @@ const PlayPage = (props: Props) => {
       .map((a) => Number(a))
       .reduce((acc, cur) => (newObject[acc] > newObject[cur] ? acc : cur));
 
-    saveResult(results[modeKey]);
+    saveResult!(results[modeKey]);
   };
 
   useEffect(() => {
