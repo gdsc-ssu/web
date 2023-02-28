@@ -21,7 +21,9 @@
       "@/logics/*": ["src/logics/*"],
       "@/constants/*": ["src/constants/*"],
       "@/assets/*": ["src/assets/*"],
-      "@/lib/*": ["lib/*"]
+      "@/hooks/*": ["src/hooks/*"],
+      "@/lib/*": ["lib/*"],
+      "@/resources/*": ["src/resources/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
