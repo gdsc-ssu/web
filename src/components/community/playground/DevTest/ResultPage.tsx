@@ -2,10 +2,11 @@ import { DevType } from '@/resources/devTestQustions';
 import type { StepProps } from './types';
 import * as styles from './devtest.css';
 import ResultBox from './ResultBox/ResultBox';
-import { Button } from '../common';
+import { Button, WaitingModal } from '../common';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { useInterval } from '@/hooks/useInterval';
 
 interface Props extends StepProps {
   result?: DevType;
@@ -13,6 +14,11 @@ interface Props extends StepProps {
 
 const ResultPage = ({ result }: Props) => {
   const cardRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+
+  useInterval(() => {
+    setLoading(false);
+  }, 3000);
 
   const onDownloadBtn = () => {
     const card = cardRef.current;
@@ -54,6 +60,7 @@ const ResultPage = ({ result }: Props) => {
           onClick={() => location.reload()}
         />
       </div>
+      {loading ? <WaitingModal /> : <></>}
     </div>
   );
 };

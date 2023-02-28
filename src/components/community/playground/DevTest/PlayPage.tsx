@@ -60,7 +60,7 @@ const PlayPage = (props: Props) => {
   };
 
   useEffect(() => {
-    if (idx == questions.length) {
+    if (idx === questions.length) {
       getMode();
       onEnd();
     } else {

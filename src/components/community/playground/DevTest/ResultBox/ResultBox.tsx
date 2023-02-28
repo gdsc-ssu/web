@@ -20,7 +20,9 @@ const ResultBox = ({ result }: Props) => {
       </span>
       <ul className={styles.resultBox['list']}>
         {result.content.map((r) => (
-          <li className={r}>{r}</li>
+          <li className={r} key={r}>
+            {r}
+          </li>
         ))}
       </ul>
       <div className={styles.resultBox['logo']}>
