@@ -62,12 +62,12 @@ export const resultBox = styleVariants({
       color: COLORS.grayscale.Gray9,
     },
   ],
-  recruiting: [
+  logo: [
     {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: '8px',
+      gap: '4px',
     },
   ],
   recDetail: [

@@ -81,11 +81,26 @@ export const progress = style({
 export const resultPage = styleVariants({
   container: [
     {
-      padding: '60px 30px',
+      width: '100%',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       gap: '30px',
+      paddingBottom: '60px',
+    },
+  ],
+  resultWrapper: [
+    {
+      background: `linear-gradient(
+        135deg,
+        ${COLORS.SSU.Blue},
+        ${COLORS.SSU.SkyBlue}
+      )`,
+      width: '100%',
+      padding: '60px 30px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '15px',
     },
   ],
   btnBox: [
@@ -95,6 +110,23 @@ export const resultPage = styleVariants({
       flexDirection: 'column',
       alignItems: 'center',
       gap: '10px',
+      padding: '0px 10px',
+    },
+  ],
+  recruiting: [
+    {
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '8px',
+    },
+  ],
+  recDetail: [
+    {
+      fontSize: '14px',
+      textAlign: 'center',
+      color: COLORS.grayscale.white,
     },
   ],
 });

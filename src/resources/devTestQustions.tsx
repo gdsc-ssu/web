@@ -59,7 +59,7 @@ export const vitaminDev: DevType = {
 
 export const artistDev: DevType = {
   name: Dev.Artist,
-  title: '소피, 아름답지 않은면 살아도 산게 아니야.',
+  title: '소피, 아름답지 않다면 살아도 산게 아니야.',
   subtitle: '섬세함과 완벽함은 나의 원동력!',
   type: '하울 스타일의 예술가 개발자',
   part: Part.WM,
