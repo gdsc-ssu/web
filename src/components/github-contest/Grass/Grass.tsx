@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 
+import { CountType } from '@/constants/github';
 import GrassGraph, { GrassGraphDataType } from './GrassGraph';
 import GrassTip, { GrassTipDataType } from './GrassTip';
 import GrassExplain from './GrassExplain';
@@ -10,7 +11,6 @@ export interface GrassPropsType {
   data: GrassGraphDataType[];
 }
 
-// TODO: 반응형 디자인
 const Grass = ({ data }: GrassPropsType) => {
   const [grassTipData, setGrassTipData] = useState<GrassTipDataType>({
     x: 0,
@@ -49,7 +49,9 @@ const Grass = ({ data }: GrassPropsType) => {
 
   return (
     <div className={styles.grassWrapperStyle}>
-      <div>{totalCount} commits in the last year</div>
+      <div
+        className={styles.grassInfoStyle}
+      >{`${totalCount} ${CountType}s in the last year`}</div>
       <GrassGraph
         data={data}
         onMouseEnter={onMouseEnter}
