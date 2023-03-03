@@ -1,9 +1,10 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+// TODO: style
 export const base = style({
-  position: 'absolute',
+  position: 'fixed',
   zIndex: '999',
-  fontSize: '12px',
+  fontSize: '16px',
   background: 'black',
   textAlign: 'center',
   padding: '8px 16px',
@@ -19,10 +20,11 @@ export const grassTipStyle = styleVariants({
 });
 
 export const pointStyle = style({
-  position: 'absolute',
+  position: 'fixed',
+  zIndex: '999',
   background: 'black',
-  top: '25px',
   width: '10px',
   height: '10px',
   transform: 'rotate(45deg)',
+  border: 'none',
 });

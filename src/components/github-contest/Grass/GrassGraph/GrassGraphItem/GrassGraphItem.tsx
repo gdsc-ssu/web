@@ -23,8 +23,9 @@ const GrassGraphItem = ({
     e: React.MouseEvent<SVGRectElement, MouseEvent>,
   ) => {
     const bounds = e.currentTarget.getBoundingClientRect();
-    const x = bounds.left - bounds.width * 0.5; // TODO: 툴팁 위치 변경 -> * 0.1 * 0.9
-    const y = bounds.top - bounds.height * 2.7;
+    console.log(bounds.left, bounds.top);
+    const x = bounds.left + bounds.width * 0.5;
+    const y = bounds.top + bounds.height * 0.5;
     onMouseEnter?.(x, y, infoText);
   };
 

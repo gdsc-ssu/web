@@ -18,12 +18,18 @@ const GrassTip = ({ grassTipData }: GrassTipPropsType) => {
     <div
       className={styles.grassTipStyle[displayType]}
       style={{
-        top: grassTipData.y - 5,
-        left: grassTipData.x,
+        top: grassTipData.y - 52,
+        left: grassTipData.x - 20,
       }}
     >
       <div>{grassTipData.infoText}</div>
-      <div className={styles.pointStyle}></div>
+      <div
+        className={styles.pointStyle}
+        style={{
+          top: grassTipData.y + 30 - 52,
+          left: grassTipData.x - 5,
+        }}
+      ></div>
     </div>
   );
 };
