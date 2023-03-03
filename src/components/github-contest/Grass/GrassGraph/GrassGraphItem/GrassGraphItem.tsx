@@ -19,6 +19,15 @@ const GrassGraphItem = ({
   onMouseEnter,
   onMouseLeave,
 }: GrassGraphItemPropsType) => {
+  const handleMouseEnter = (
+    e: React.MouseEvent<SVGRectElement, MouseEvent>,
+  ) => {
+    const bounds = e.currentTarget.getBoundingClientRect();
+    const x = bounds.left - bounds.width * 0.5; // TODO: 툴팁 위치 변경 -> * 0.1 * 0.9
+    const y = bounds.top - bounds.height * 2.7;
+    onMouseEnter?.(x, y, infoText);
+  };
+
   return (
     <rect
       data-level={level}
@@ -27,9 +36,9 @@ const GrassGraphItem = ({
       y={y}
       rx="2"
       ry="2"
-      width="10"
-      height="10"
-      onMouseEnter={() => onMouseEnter?.(x, y, infoText)}
+      width="13"
+      height="13"
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {infoText}

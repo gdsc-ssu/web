@@ -30,7 +30,7 @@ const GrassGraph = ({
   onMouseLeave,
 }: GrassGraphPropsType) => {
   const grass = () => {
-    let rectX = 30;
+    let rectX = 45;
 
     const monthArea = [] as JSX.Element[]; // 상단의 월 표시
     const dayArea = [] as JSX.Element[]; // 좌측의 요일 표시
@@ -49,9 +49,9 @@ const GrassGraph = ({
 
       // 위치
       if (thisDay === 0 && idx !== 0) {
-        rectX += 14; // 일요일 나올 때마다 우로 이동
+        rectX += 19; // 일요일 나올 때마다 우로 이동
       }
-      const rectY = 27 + thisDay * 13;
+      const rectY = 30 + thisDay * 19;
       const monthY = 20;
       const dayY = rectY + 10;
 
@@ -106,9 +106,9 @@ const GrassGraph = ({
   };
 
   return (
-    <svg width="1000" height="120">
-      {grass()}
-    </svg>
+    <div className={styles.grassGraphBaseStyle}>
+      <svg className={styles.grassGraphSvgStyle}>{grass()}</svg>
+    </div>
   );
 };
 
