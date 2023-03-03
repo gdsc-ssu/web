@@ -4,31 +4,26 @@ import GrassGraphItem, {
 } from '@/components/github-contest/Grass/GrassGraph/GrassGraphItem';
 import * as styles from './GrassExplain.css';
 
-// TODO: 커밋 개수 가져오는 로직 설명 링크 추가 (노션 or new page)
 const GrassExplain = () => {
   const levels = [0, 1, 2, 3, 4] as GrassLevelType[];
 
+  // TODO: 커밋 개수 가져오는 로직 설명 링크 추가 (노션 or new page)
+  const explainURL = '/';
+
   return (
     <div className={styles.explainWrapper}>
-      <Link className={styles.explainLinkStyle} href="/">
+      <Link className={styles.explainLinkStyle} href={explainURL}>
         Learn how we count commits
       </Link>
       <div className={styles.colorExampleWrapperStyle}>
         <span>Less</span>
-        <div className={styles.colorExampleStyle}>
+        <svg className={styles.colorExampleStyle}>
           {levels.map((level) => {
             return (
-              <svg
-                className={styles.colorExampleItemStyle}
-                width="10"
-                height="10"
-                key={level}
-              >
-                <GrassGraphItem level={level} />
-              </svg>
+              <GrassGraphItem x={level * 19} y={0} level={level} key={level} />
             );
           })}
-        </div>
+        </svg>
         <span>More</span>
       </div>
     </div>

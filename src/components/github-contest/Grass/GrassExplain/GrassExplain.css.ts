@@ -1,30 +1,33 @@
 import { style } from '@vanilla-extract/css';
 
-// TODO: style
+// TODO: style(사이즈), 반응형, constant
 export const explainWrapper = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '100%',
+  fontSize: '18px',
+  color: '#D6D6D6',
+  paddingLeft: '40px',
+  marginTop: '3px',
 });
 
 export const explainLinkStyle = style({
-  color: '#57606a',
   textDecoration: 'none',
+  color: '#D6D6D6',
 
   ':hover': {
-    color: '#0969da ',
+    color: '#4286F5',
   },
 });
 
 export const colorExampleWrapperStyle = style({
   display: 'flex',
+  alignItems: 'center',
 });
 
 export const colorExampleStyle = style({
-  margin: '0 5px',
-});
-
-export const colorExampleItemStyle = style({
-  margin: '0 1.5px',
+  width: '91px',
+  height: '15px',
+  margin: '0 8px',
 });
