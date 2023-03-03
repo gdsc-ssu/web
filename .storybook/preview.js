@@ -1,4 +1,5 @@
 import * as NextImage from 'next/image';
+import '../public/global.css';
 
 // new `next/image` support
 const OriginalNextImage = NextImage.default;
