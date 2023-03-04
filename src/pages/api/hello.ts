@@ -1,19 +1,16 @@
-import type { NextRequest } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-export const config = {
-  runtime: 'experimental-edge',
-};
-
-export default function handler(req: NextRequest) {
-  return new Response(
-    JSON.stringify({
-      name: 'Jim Halpert',
-    }),
-    {
-      status: 200,
-      headers: {
-        'content-type': 'application/json',
-      },
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
+  const newTest = await prisma.test.create({
+    data: {
+      test: '1234',
+      test2: '5678',
     },
-  );
+  });
+
+  res.status(200).json(newTest);
 }

@@ -5,8 +5,8 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    runtime: 'experimental-edge',
+  images: {
+    domains: ['horosocular.s3.ap-northeast-1.amazonaws.com'],
   },
 };
 
