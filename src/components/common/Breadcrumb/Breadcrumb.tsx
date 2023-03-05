@@ -9,9 +9,9 @@ type BreadcrumbProps = {
 const Breadcrumb = ({ title, subTitle }: BreadcrumbProps) => {
   return (
     <section className="breadcrumb_area">
-      <div className={styles.container}>
-        <h3 className={styles.breadcrumb_title}>{title}</h3>
-        <h5 className={styles.breadcrumb_subTitle}>{subTitle}</h5>
+      <div className={styles.breadcrumb['box']}>
+        <h3 className={styles.breadcrumb['title']}>{title}</h3>
+        <h5 className={styles.breadcrumb['subtitle']}>{subTitle}</h5>
       </div>
     </section>
   );

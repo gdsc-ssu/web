@@ -1,27 +1,36 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { COLORS } from '../../common/colorToken';
+import { titleText, bodyText } from '../../common//textToken.css';
 
-export const roadmapAreaLeft = style({
-  display: 'inline-block',
-  width: '20%',
-  verticalAlign: 'top',
-});
-
-export const container = style({
-  textAlign: 'right',
-  paddingRight: 20,
-});
-
-export const title = style({
-  fontStyle: 'normal',
-  fontWeight: 800,
-  fontSize: 36,
-  alignItems: 'center',
-  color: '#fff',
-});
-export const subtitle = style({
-  fontStyle: 'normal',
-  fontWeight: 400,
-  fontSize: 20,
-  alignItems: 'center',
-  color: '#fff',
+export const roadmapAreaLeft = styleVariants({
+  box: [
+    {
+      display: 'inline-block',
+      width: '20%',
+      verticalAlign: 'top',
+    },
+  ],
+  container: [
+    bodyText.body1B,
+    {
+      textAlign: 'right',
+      paddingRight: 20,
+    },
+  ],
+  title: [
+    titleText.title,
+    {
+      alignItems: 'center',
+      color: '#fff',
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
+  subtitle: [
+    bodyText.body1R,
+    {
+      alignItems: 'center',
+      color: '#fff',
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
 });

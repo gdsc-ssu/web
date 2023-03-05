@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import * as styles from './RoadmapContent.css';
+import * as styles from '../roadmapContent/roadmapContent.css';
 import { roadmap_data } from '../../../resources/roadmap-data';
 import Button from '../../common/Button/Button';
-import LoadmapAreaLeft from '../RoadmapAreaLeft/RoadmapAreaLeft';
+import LoadmapAreaLeft from '../roadmapAreaLeft/RoadmapAreaLeft';
 
 const RoadmapContent = () => {
   const [category, setCategory] = useState('Web Frontend');
   const items = roadmap_data.filter((p) => p.stat);
-  const [portfolioItems, setPortfolioItems] = useState(
+  const [categoryItems, setCategoryItems] = useState(
     items.filter((i) => i.category === category),
   );
 
@@ -24,34 +24,43 @@ const RoadmapContent = () => {
   const handleCategory = (c: string) => {
     setCategory(c);
     const new_items = items.filter((i) => i.category === c);
-    setPortfolioItems(new_items);
+    setCategoryItems(new_items);
   };
 
-  const FirstItems = portfolioItems.filter((i) => i.level === 'beginner');
-  const SecondItems = portfolioItems.filter((i) => i.level === 'intermediated');
-  const ThirdItems = portfolioItems.filter((i) => i.level === 'advanced');
+  const FirstItems = categoryItems.filter((i) => i.level === 'beginner');
+  const SecondItems = categoryItems.filter((i) => i.level === 'intermediated');
+  const ThirdItems = categoryItems.filter((i) => i.level === 'advanced');
 
   return (
     <>
-      <div className={styles.roadmap_Menu}>
-        <div className={styles.MenuContainer}>
+      {/* 버튼 메뉴 */}
+      <div className={styles.category['box']}>
+        <div className={styles.category['container']}>
           {categories.map((c, i) => (
             <Button text={c} onClickHandler={() => handleCategory(c)} key={i} />
           ))}
         </div>
-        <div className={styles.title}>2023 {category} RoadMap </div>
+        <div className={styles.category['container']}>
+          2023 {category} RoadMap{' '}
+        </div>
       </div>
+
+      {/* content */}
       <div className={styles.roadmapArea}>
         <LoadmapAreaLeft
           title="Beginner"
           subtitle="개발을 안해봤다구요? 시작하지마세요.."
         />
-        <div className={styles.roadmapAreaRight}>
-          <div className={styles.container}>
+        <div className={styles.roadmapAreaRight['box']}>
+          <div className={styles.roadmapAreaRight['container']}>
             {FirstItems.map((x) => (
-              <div key={x.id} className={styles.container}>
-                <div className={styles.title}>{x.title}</div>
-                <div className={styles.content}>{x.content}</div>
+              <div key={x.id} className={styles.roadmapAreaRight['container']}>
+                <div className={styles.roadmapAreaRight['title']}>
+                  {x.title}
+                </div>
+                <div className={styles.roadmapAreaRight['subtitle']}>
+                  {x.content}
+                </div>
               </div>
             ))}
           </div>
@@ -62,12 +71,16 @@ const RoadmapContent = () => {
           title="Intermediated"
           subtitle="개발을 안해봤다구요? 시작하지마세요.."
         />
-        <div className={styles.roadmapAreaRight}>
-          <div className={styles.container}>
+        <div className={styles.roadmapAreaRight['box']}>
+          <div className={styles.roadmapAreaRight['container']}>
             {SecondItems.map((x) => (
-              <div key={x.id} className={styles.container}>
-                <div className={styles.title}>{x.title}</div>
-                <div className={styles.content}>{x.content}</div>
+              <div key={x.id} className={styles.roadmapAreaRight['container']}>
+                <div className={styles.roadmapAreaRight['title']}>
+                  {x.title}
+                </div>
+                <div className={styles.roadmapAreaRight['subtitle']}>
+                  {x.content}
+                </div>
               </div>
             ))}
           </div>
@@ -78,12 +91,16 @@ const RoadmapContent = () => {
           title="Advanced"
           subtitle="개발을 안해봤다구요? 시작하지마세요.."
         />
-        <div className={styles.roadmapAreaRight}>
-          <div className={styles.container}>
+        <div className={styles.roadmapAreaRight['box']}>
+          <div className={styles.roadmapAreaRight['container']}>
             {ThirdItems.map((x) => (
-              <div key={x.id} className={styles.container}>
-                <div className={styles.title}>{x.title}</div>
-                <div className={styles.content}>{x.content}</div>
+              <div key={x.id} className={styles.roadmapAreaRight['container']}>
+                <div className={styles.roadmapAreaRight['title']}>
+                  {x.title}
+                </div>
+                <div className={styles.roadmapAreaRight['subtitle']}>
+                  {x.content}
+                </div>
               </div>
             ))}
           </div>

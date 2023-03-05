@@ -1,53 +1,74 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { COLORS } from '../../common/colorToken';
+import { titleText, bodyText } from '../../common//textToken.css';
 
-export const roadmap_Menu = style({
-  paddingBottom: 100,
-  paddingTop: 100,
-  textAlign: 'center',
-  width: '80%',
-  margin: 'auto',
+export const category = styleVariants({
+  box: [
+    {
+      gap: '5px',
+      paddingBottom: 0,
+      paddingTop: 100,
+      textAlign: 'center',
+      width: '80%',
+      margin: 'auto',
+    },
+  ],
+  container: [
+    bodyText.body1B,
+    {
+      display: 'flex',
+      justifyContent: 'space-evenly',
+      alignItems: 'flex-end',
+      paddingBottom: 100,
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
+  title: [
+    bodyText.body1B,
+    {
+      // textAlign: 'center',
+      marginBottom: 0,
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
 });
 
-export const MenuContainer = style({
-  display: 'flex',
-  justifyContent: 'space-evenly',
-  alignItems: 'flex-end',
-  paddingBottom: 80,
-});
-
-export const text = style({
-  fontWeight: 700,
-  fontSize: 20,
+export const roadmapAreaRight = styleVariants({
+  box: [
+    {
+      display: 'inline-block',
+      width: '80%',
+      borderLeft: '1px solid #fff',
+      boxSizing: 'border-box',
+      padding: '20px',
+    },
+  ],
+  container: [
+    bodyText.body1B,
+    {
+      paddingLeft: 20,
+      paddingBottom: 20,
+    },
+  ],
+  title: [
+    bodyText.body1R,
+    {
+      // textAlign: 'center',
+      marginBottom: 0,
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
+  subtitle: [
+    bodyText.caption,
+    {
+      // textAlign: 'center',
+      marginBottom: 0,
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
 });
 
 export const roadmapArea = style({
   marginTop: 20,
   padding: 20,
-});
-
-export const roadmapAreaRight = style({
-  display: 'inline-block',
-  width: '80%',
-  borderLeft: '1px solid #fff',
-  boxSizing: 'border-box',
-  padding: '20px',
-});
-
-export const container = style({
-  paddingLeft: 20,
-  paddingBottom: 20,
-});
-
-export const title = style({
-  fontStyle: 'normal',
-  fontWeight: 500,
-  fontSize: 20,
-  color: '#fff',
-});
-
-export const content = style({
-  fontStyle: 'normal',
-  fontWeight: 500,
-  fontSize: 14,
-  color: '#fff',
 });
