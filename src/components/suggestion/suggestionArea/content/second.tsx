@@ -32,11 +32,11 @@ function Second() {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.suggestion['container']}>
         {/* <form onSubmit={onSubmit}> */}
         <form>
           <input
-            className={styles.inputStyle}
+            className={styles.suggestion['inputStyle']}
             type="text"
             placeholder="여기에 내용을 입력해주세요"
             // value={inputValue}
