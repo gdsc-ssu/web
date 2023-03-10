@@ -7,6 +7,7 @@ import LoadmapAreaLeft from '../roadmapAreaLeft/RoadmapAreaLeft';
 const RoadmapContent = () => {
   const [category, setCategory] = useState('Web Frontend');
   const items = roadmap_data.filter((p) => p.stat);
+  const [clicked, setClicked] = useState(false);
   const [categoryItems, setCategoryItems] = useState(
     items.filter((i) => i.category === category),
   );
@@ -37,7 +38,14 @@ const RoadmapContent = () => {
       <div className={styles.category['box']}>
         <div className={styles.category['container']}>
           {categories.map((c, i) => (
-            <Button text={c} onClickHandler={() => handleCategory(c)} key={i} />
+            <Button
+              title={c}
+              selected={i}
+              onClick={() => handleCategory(c)}
+              key={i}
+              clicked={false}
+              // active={'button'}ß
+            />
           ))}
         </div>
         <div className={styles.category['container']}>

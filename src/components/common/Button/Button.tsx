@@ -1,13 +1,43 @@
 import * as styles from './button.css';
 
-interface Props {
-  text: string;
-  onClickHandler: () => void;
+const Themes = [
+  'frontEnd',
+  'git',
+  'crossFlatform',
+  'ServerCloud',
+  'AIML',
+  'DevOps',
+] as const;
+
+interface Props extends React.ComponentProps<'button'> {
+  /**0번 : FE
+   * 1번 : git
+   * 2번 : Cross Platform
+   * 3번 : Server/Cloud
+   * 4번 : AI/ML
+   * 5번 : DevOps
+   */
+  selected: number;
+  title: string;
+  clicked: boolean;
+  onClick: () => void;
 }
-const Button = (props: Props) => {
+
+const Button = ({
+  clicked,
+  selected,
+  title,
+  onClick,
+  ...buttonProps
+}: Props) => {
+  const Theme = Themes[selected];
   return (
-    <button className={styles.button} onClick={props.onClickHandler}>
-      {props.text}
+    <button
+      {...buttonProps}
+      onClick={onClick}
+      className={clicked ? styles.buttonActive[Theme] : styles.button}
+    >
+      {title}
     </button>
   );
 };
