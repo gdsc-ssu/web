@@ -5,13 +5,6 @@ import Button from '../../common/Button/Button';
 import LoadmapAreaLeft from '../roadmapAreaLeft/RoadmapAreaLeft';
 
 const RoadmapContent = () => {
-  const [category, setCategory] = useState('Web Frontend');
-  const items = roadmap_data.filter((p) => p.stat);
-  const [clicked, setClicked] = useState(false);
-  const [categoryItems, setCategoryItems] = useState(
-    items.filter((i) => i.category === category),
-  );
-
   // set으로 카테고리를 뽑아내려 했으나 타입 관련 에러로.. 배열을 일단 하나 생성했습니다..
   const categories = [
     'Web Frontend',
@@ -22,10 +15,36 @@ const RoadmapContent = () => {
     'DevOps',
   ];
 
-  const handleCategory = (c: string) => {
+  const [category, setCategory] = useState('Web Frontend');
+  const items = roadmap_data.filter((p) => p.stat);
+  // const [btnActive, setBtnActive] = useState(false);
+  const [isSelected, setIsSelected] = useState<Array<boolean>>(
+    Array(categories.length).fill(false),
+  );
+  const [prev, setPrev] = useState<Array<string | number>>(['Web Frontend', 0]);
+  const [categoryItems, setCategoryItems] = useState(
+    items.filter((i) => i.category === category),
+  );
+
+  const handleCategory = (c: string, idx: number) => {
+    if (c !== prev[0]) {
+      console.log('prev', prev[0]);
+      console.log('curr', c);
+      isSelected.fill(false);
+    }
+
     setCategory(c);
     const new_items = items.filter((i) => i.category === c);
     setCategoryItems(new_items);
+
+    isSelected[idx] = true;
+    setIsSelected([
+      ...isSelected.slice(0, idx),
+      isSelected[idx],
+      ...isSelected.slice(idx + 1),
+    ]);
+
+    setPrev([c, idx]);
   };
 
   const FirstItems = categoryItems.filter((i) => i.level === 'beginner');
@@ -41,10 +60,9 @@ const RoadmapContent = () => {
             <Button
               title={c}
               selected={i}
-              onClick={() => handleCategory(c)}
+              onClick={() => handleCategory(c, i)}
               key={i}
-              clicked={false}
-              // active={'button'}ß
+              clicked={isSelected[i]}
             />
           ))}
         </div>

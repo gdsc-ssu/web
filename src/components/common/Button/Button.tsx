@@ -7,6 +7,7 @@ const Themes = [
   'ServerCloud',
   'AIML',
   'DevOps',
+  'base',
 ] as const;
 
 interface Props extends React.ComponentProps<'button'> {
@@ -16,6 +17,7 @@ interface Props extends React.ComponentProps<'button'> {
    * 3번 : Server/Cloud
    * 4번 : AI/ML
    * 5번 : DevOps
+   * 6번 : base
    */
   selected: number;
   title: string;

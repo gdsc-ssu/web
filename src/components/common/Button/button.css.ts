@@ -10,50 +10,57 @@ export const button = style({
   paddingLeft: 20,
   paddingRight: 20,
   color: '#fff',
-  fontSize: 20,
+  fontSize: btnText.button4B,
 });
 
 export const buttonActive = styleVariants({
   frontEnd: [
     button,
-    btnText.button4B,
+
     {
       background: `linear-gradient(135deg, ${COLORS.GDSC.Red}, ${COLORS.GDSC.Blue})`,
     },
   ],
   git: [
     button,
-    btnText.button4B,
+
     {
       background: `linear-gradient(135deg, ${COLORS.GDSC.Green}, ${COLORS.GDSC.Blue})`,
     },
   ],
   crossFlatform: [
     button,
-    btnText.button4B,
+
     {
       background: `linear-gradient(135deg, ${COLORS.GDSC.Blue}, ${COLORS.GDSC.Green})`,
     },
   ],
   ServerCloud: [
     button,
-    btnText.button2B,
+
     {
       background: `linear-gradient(135deg, ${COLORS.GDSC.Green}, ${COLORS.GDSC.Yellow})`,
     },
   ],
   AIML: [
     button,
-    btnText.button4B,
+
     {
       background: `linear-gradient(135deg, ${COLORS.GDSC.Blue}, ${COLORS.GDSC.Red})`,
     },
   ],
   DevOps: [
     button,
-    btnText.button4B,
+
     {
       background: `linear-gradient(135deg, ${COLORS.GDSC.Yellow}, ${COLORS.GDSC.Blue})`,
+    },
+  ],
+  base: [
+    button,
+
+    {
+      background: `linear-gradient(135deg, ${COLORS.grayscale.Black}, ${COLORS.grayscale.Black})`,
     },
   ],
 });
