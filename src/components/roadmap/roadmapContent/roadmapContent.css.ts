@@ -2,6 +2,11 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { COLORS } from '../../common/colorToken';
 import { titleText, bodyText } from '../../common//textToken.css';
 
+const MEDIA_QUERY = {
+  pc: `screen and (min-width: 909 px)`,
+  mobile: `screen and (max-width: 908px)`,
+} as const;
+
 export const category = styleVariants({
   box: [
     {
@@ -21,6 +26,11 @@ export const category = styleVariants({
       alignItems: 'flex-end',
       paddingBottom: 100,
       textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+      '@media': {
+        [MEDIA_QUERY.mobile]: {
+          display: 'block',
+        },
+      },
     },
   ],
   title: [
@@ -41,6 +51,11 @@ export const roadmapAreaRight = styleVariants({
       borderLeft: '1px solid #fff',
       boxSizing: 'border-box',
       padding: '20px',
+      '@media': {
+        [MEDIA_QUERY.mobile]: {
+          width: '100%',
+        },
+      },
     },
   ],
   container: [
@@ -48,6 +63,11 @@ export const roadmapAreaRight = styleVariants({
     {
       paddingLeft: 20,
       paddingBottom: 20,
+      '@media': {
+        [MEDIA_QUERY.mobile]: {
+          paddingLeft: 0,
+        },
+      },
     },
   ],
   title: [

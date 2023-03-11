@@ -2,6 +2,11 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { COLORS } from '../colorToken';
 import { btnText } from '../textToken.css';
 
+const MEDIA_QUERY = {
+  pc: `screen and (min-width: 909 px)`,
+  mobile: `screen and (max-width: 908px)`,
+} as const;
+
 export const button = style({
   backgroundColor: '#000',
   borderRadius: 30,
@@ -11,6 +16,11 @@ export const button = style({
   paddingRight: 20,
   color: '#fff',
   fontSize: btnText.button4B,
+  '@media': {
+    [MEDIA_QUERY.mobile]: {
+      margin: 5,
+    },
+  },
 });
 
 export const buttonActive = styleVariants({
