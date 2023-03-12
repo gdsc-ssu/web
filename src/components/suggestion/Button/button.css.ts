@@ -1,20 +1,31 @@
 import { style } from '@vanilla-extract/css';
+import { COLORS } from '../../common/colorToken';
+import { btnText, titleText } from '../../common/textToken.css';
+
+const MEDIA_QUERY = {
+  pc: `screen and (min-width: 909 px)`,
+  mobile: `screen and (max-width: 908px)`,
+} as const;
 
 export const button = style({
   backgroundColor: '#000',
-  borderRadius: 500,
-  border: '2px solid #fff',
+  borderRadius: 30,
+  border: '1px solid #fff',
+  margin: 10,
   padding: 10,
   paddingLeft: 30,
   paddingRight: 30,
-  margin: 10,
   color: '#fff',
-  fontSize: 20,
+
+  fontSize: 18,
 
   ':hover': {
-    background: `${(props: any) => props.from}`,
-    backgroundImage:
-      '-webkit-linear-gradient( 180deg, #EA4235 0%, #4286F5 100%)',
-    border: 'none',
+    background: `linear-gradient(135deg, ${COLORS.GDSC.Red}, ${COLORS.GDSC.Blue})`,
+  },
+
+  '@media': {
+    [MEDIA_QUERY.mobile]: {
+      margin: 5,
+    },
   },
 });
