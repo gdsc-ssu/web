@@ -2,6 +2,12 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { COLORS } from '../../../common/colorToken';
 import { titleText, bodyText } from '../../../common/textToken.css';
 
+const BREAKPOINTS = [500, 800] as const;
+const MEDIA_QUERY = {
+  pc: `screen and (min-width: ${BREAKPOINTS[1]}px)`,
+  mobile: `screen and (max-width: ${BREAKPOINTS[0]}px)`,
+} as const;
+
 export const suggestion = styleVariants({
   container: [
     {
@@ -12,6 +18,13 @@ export const suggestion = styleVariants({
       color: 'white',
       whiteSpace: 'pre-line',
       display: 'block',
+      '@media': {
+        [MEDIA_QUERY.mobile]: {
+          padding: 50,
+          paddingLeft: 0,
+          paddingRight: 0,
+        },
+      },
     },
   ],
   title: [
