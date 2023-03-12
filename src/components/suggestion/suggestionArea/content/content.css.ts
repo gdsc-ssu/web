@@ -40,19 +40,33 @@ export const suggestion = styleVariants({
       textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
     },
   ],
+  subtext: [
+    bodyText.caption,
+    {
+      textAlign: 'left',
+      marginBottom: 0,
+      width: '80%',
+      margin: 'auto',
+      color: `${COLORS.grayscale.Gray6}`,
+      textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+    },
+  ],
   inputStyle: [
     bodyText.body1R,
     {
       backgroundColor: 'black',
       color: 'white',
-      width: '85%',
+      width: '80%',
       height: 40,
       border: 'none',
       borderBottom: '1px solid #fff',
       display: 'block',
       fontSize: 20,
-      margin: 70,
+      // margin: 70,
       textShadow: `0.5px 0.5px 1.5px ${COLORS.grayscale.Gray8}`,
+
+      margin: 'auto',
+      marginBottom: 10,
     },
   ],
 });

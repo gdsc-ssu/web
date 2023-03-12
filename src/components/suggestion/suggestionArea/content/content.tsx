@@ -5,6 +5,10 @@ import Second from './second';
 import Third from './third';
 import Button from '../../Button/Button';
 
+interface Props {
+  con: boolean;
+}
+
 function Content() {
   const [first, setFirst] = useState(true);
   const [second, setSecond] = useState(false);

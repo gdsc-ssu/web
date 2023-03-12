@@ -2,33 +2,21 @@ import React, { useState, useEffect } from 'react';
 import * as styles from './content.css';
 import Button from '../../../common/Button/Button';
 
+// interface Props {
+//   con: boolean;
+// }
 function Second() {
-  // const [content, setContent] = useState([{ content: '' }]);
-  // let [inputValue, setInputValue] = useState('');
-  // let [newContent, setNewContent] = useState({ content: '' });
+  let [inputValue, setInputValue] = useState('');
+  let [con, setCon] = useState(true);
 
-  // const inputChg = (e: any) => {
-  //   setInputValue(e.target.value);
-  // };
-
-  // const onSubmit = (e: any) => {
-  //   e.preventDefault();
-  //   setNewContent({ content: inputValue });
-  //   setContent([...content, newContent]);
-  //   setInputValue('');
-  // };
-
-  // const onCancel = (e: any) => {
-  //   return;
-  // };
-
-  // useEffect(() => {
-  //   setNewContent({ content: inputValue });
-  // }, [inputValue]);
-
-  // useEffect(() => {
-  //   localStorage.setItem('suggestion', JSON.stringify(content));
-  // }, [content]);
+  const inputChg = (e: any) => {
+    setInputValue(e.target.value);
+    if (inputValue.length > 29) {
+      setCon(false);
+    } else if (inputValue.length < 30) {
+      setCon(true);
+    }
+  };
 
   return (
     <>
@@ -40,8 +28,14 @@ function Second() {
             type="text"
             placeholder="여기에 내용을 입력해주세요"
             // value={inputValue}
-            // onChange={inputChg}
+            onChange={inputChg}
           ></input>
+          {con && (
+            <div className={styles.suggestion['subtext']}>
+              {' '}
+              *30글자 이상 작성해주세요.
+            </div>
+          )}
         </form>
       </div>
     </>
