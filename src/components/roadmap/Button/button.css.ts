@@ -1,6 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { COLORS } from '../colorToken';
-import { btnText } from '../textToken.css';
+import { COLORS } from '../../common/colorToken';
+import { btnText } from '../../common/textToken.css';
 
 const MEDIA_QUERY = {
   pc: `screen and (min-width: 909 px)`,

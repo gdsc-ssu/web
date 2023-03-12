@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as styles from '../roadmapContent/roadmapContent.css';
 import { roadmap_data } from '../../../resources/roadmap-data';
-import Button from '../../common/Button/Button';
+import Button from '../Button/Button';
 import LoadmapAreaLeft from '../roadmapAreaLeft/RoadmapAreaLeft';
 
 const RoadmapContent = () => {
