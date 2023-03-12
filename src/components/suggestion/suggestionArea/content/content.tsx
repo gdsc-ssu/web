@@ -3,7 +3,7 @@ import * as styles from './content.css';
 import First from './first';
 import Second from './second';
 import Third from './third';
-import Button from '../../../common/Button/Button';
+import Button from '../../Button/Button';
 
 function Content() {
   const [first, setFirst] = useState(true);
