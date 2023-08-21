@@ -1,5 +1,5 @@
-import { Test } from '@/components/common';
+import BrandSection from '@/components/main/BrandSection';
 
 export default function Home() {
-  return <Test text={'test'} />;
+  return <BrandSection />;
 }
