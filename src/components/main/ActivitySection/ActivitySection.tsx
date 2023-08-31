@@ -94,8 +94,6 @@ const SEMINARS = [
   '1pT2Bkkvou8',
 ] as const;
 
-console.log(SEMINARS.length);
-
 const SEMINARS_FOR_SLIDER = [...SEMINARS, ...SEMINARS];
 
 const STUDIES = [
