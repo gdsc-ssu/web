@@ -32,6 +32,14 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+    ],
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);

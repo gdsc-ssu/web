@@ -8,26 +8,20 @@ const wrapperBase = style({
   justifyContent: 'center',
   width: '100%',
   maxWidth: '1280px',
-  height: '100vh',
   padding: '0 51px',
-  gap: '128px',
-  margin: 'auto',
 
   [`@media ${MEDIA_QUERY.tabletLg}`]: {
-    padding: '0 24px',
-    gap: '53px',
+    padding: '0 48px',
   },
   [`@media ${MEDIA_QUERY.tabletSm}`]: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: '0',
-    gap: '150px',
   },
   [`@media ${MEDIA_QUERY.mobile}`]: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: '0',
-    gap: '88px',
   },
 });
 
@@ -36,9 +30,11 @@ const wrapperReverse = style({
 
   [`@media ${MEDIA_QUERY.tabletSm}`]: {
     flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   [`@media ${MEDIA_QUERY.mobile}`]: {
     flexDirection: 'column',
+    alignItems: 'flex-end',
   },
 });
 

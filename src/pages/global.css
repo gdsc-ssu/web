@@ -32,3 +32,8 @@ body {
 .hipi {
   font-family: 'Nanum BaReunHiPi';
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

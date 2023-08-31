@@ -21,7 +21,8 @@
       "@/logics/*": ["src/logics/*"],
       "@/constants/*": ["src/constants/*"],
       "@/assets/*": ["src/assets/*"],
-      "@/lib/*": ["lib/*"]
+      "@/lib/*": ["lib/*"],
+      "@/utils/*": ["src/utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

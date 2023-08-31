@@ -1,6 +1,29 @@
 import { style } from '@vanilla-extract/css';
 import { TEXT_STYLES, COLORS, MEDIA_QUERY } from '@/constants/styles';
 
+export const container = style({
+  width: '100%',
+  height: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
+export const wrapper = style({
+  gap: '128px',
+
+  [`@media ${MEDIA_QUERY.tabletLg}`]: {
+    gap: '53px',
+  },
+  [`@media ${MEDIA_QUERY.tabletSm}`]: {
+    gap: '150px',
+  },
+  [`@media ${MEDIA_QUERY.mobile}`]: {
+    gap: '88px',
+  },
+});
+
 const titleWrapper = style({
   flexShrink: 0,
   position: 'relative',
@@ -112,6 +135,7 @@ export const textWrapper = style({
 
 export const textWithUnderscore = style({
   position: 'relative',
+  whiteSpace: 'nowrap',
 });
 
 export const smileIconWrapper = style({
@@ -137,7 +161,7 @@ export const smileIcon = style({
   },
 });
 
-export const unserscoreIcon = style({
+export const underscoreIcon = style({
   position: 'absolute',
   left: 0,
   bottom: '-2px',
