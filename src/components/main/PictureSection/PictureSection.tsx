@@ -48,8 +48,8 @@ const PICTURES = [
     degree: '16deg',
   },
   {
-    image: '/offline-meeting.jpeg',
-    text: '☆ 1기 오프라인 슈몰세미나',
+    image: '/3rd-mt.jpeg',
+    text: '☆ 3기 MT',
     degree: '-2deg',
   },
 ];

@@ -23,7 +23,7 @@ const RecruitSection = () => (
       함께 합니다.
     </span>
     <Link
-      href="https://forms.gle/LyodekmPLy57beVr8"
+      href="https://forms.gle/2PPonWLzUGnntiGp9"
       target="_blank"
       rel="noreferrer noopener"
     >
@@ -34,10 +34,10 @@ const RecruitSection = () => (
     <div className={styles.descriptionWrap}>
       <ArrowTop className={styles.arrowIcon} color={COLORS.primary.green} />
       <span className={`${styles.hipiText} hipi`}>
-        3기 모집
+        4기 모집
         <br />
-        2023.09.02 ~<br />
-        2023.09.10
+        2024.08.28 ~<br />
+        2024.09.08
       </span>
     </div>
   </section>
